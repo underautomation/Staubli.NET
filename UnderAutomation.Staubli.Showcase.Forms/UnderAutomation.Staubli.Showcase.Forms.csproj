@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<ApplicationIcon>Resources\ua.ico</ApplicationIcon>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Resources\ua.ico" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(SolutionName.EndsWith(`Dev`))">
+		<ProjectReference Include="..\..\..\Staubli\Staubli.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="!$(SolutionName.EndsWith(`Dev`))">
+		<Reference Include="UnderAutomation.Staubli">
+			<HintPath>..\Libraries\net8.0\UnderAutomation.Staubli.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Components\RobotInfoControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Components\PhysicalIosControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Components\ValApplicationsControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Components\CurrentPositionControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Components\ControllerInfoControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="Components\RobotsControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	</ItemGroup>
+</Project>

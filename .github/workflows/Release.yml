@@ -1,0 +1,30 @@
+name: CI
+
+on: 
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  build:
+
+    runs-on: windows-2022
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: nuget/setup-nuget@v1
+    - name: zip libraries
+      run: |
+        cd "$Env:GITHUB_WORKSPACE\Libraries\"
+        7z a -tzip -mx=9 $Env:GITHUB_WORKSPACE\UnderAutomation.Staubli.zip *
+    - name: Build Windows Showcase Forms example
+      run: |
+        cd $Env:GITHUB_WORKSPACE\UnderAutomation.Staubli.Showcase.Forms
+        dotnet publish -p:PublishProfile=FolderProfile
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: |
+          UnderAutomation.Staubli.zip
+          **/bin/publish/UnderAutomation.Staubli.Showcase.Forms.exe
+        bodyFile: "whatsNew.md"
+        token: ${{ secrets.GITHUB_TOKEN }}
