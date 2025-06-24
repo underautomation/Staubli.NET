@@ -30,6 +30,7 @@ partial class MainForm
         components = new System.ComponentModel.Container();
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
         horizontalSplitContainer = new SplitContainer();
+        pictureBox1 = new PictureBox();
         panel1 = new Panel();
         label1 = new Label();
         lblLink = new LinkLabel();
@@ -41,18 +42,17 @@ partial class MainForm
         mainPanel = new Panel();
         panelTitle = new Label();
         tmrPeriodicUpdate = new System.Windows.Forms.Timer(components);
-        pictureBox1 = new PictureBox();
         ((System.ComponentModel.ISupportInitialize)horizontalSplitContainer).BeginInit();
         horizontalSplitContainer.Panel1.SuspendLayout();
         horizontalSplitContainer.Panel2.SuspendLayout();
         horizontalSplitContainer.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         panel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)titlePictureBox).BeginInit();
         ((System.ComponentModel.ISupportInitialize)verticalSplitContainer).BeginInit();
         verticalSplitContainer.Panel1.SuspendLayout();
         verticalSplitContainer.Panel2.SuspendLayout();
         verticalSplitContainer.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
         // horizontalSplitContainer
@@ -75,17 +75,29 @@ partial class MainForm
         // horizontalSplitContainer.Panel2
         // 
         horizontalSplitContainer.Panel2.Controls.Add(verticalSplitContainer);
-        horizontalSplitContainer.Size = new Size(1231, 858);
+        horizontalSplitContainer.Size = new Size(1540, 858);
         horizontalSplitContainer.SplitterDistance = 91;
         horizontalSplitContainer.SplitterWidth = 5;
         horizontalSplitContainer.TabIndex = 0;
+        // 
+        // pictureBox1
+        // 
+        pictureBox1.Dock = DockStyle.Right;
+        pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+        pictureBox1.Location = new Point(945, 0);
+        pictureBox1.Margin = new Padding(4, 3, 4, 3);
+        pictureBox1.Name = "pictureBox1";
+        pictureBox1.Size = new Size(144, 89);
+        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+        pictureBox1.TabIndex = 4;
+        pictureBox1.TabStop = false;
         // 
         // panel1
         // 
         panel1.Controls.Add(label1);
         panel1.Controls.Add(lblLink);
         panel1.Dock = DockStyle.Right;
-        panel1.Location = new Point(780, 0);
+        panel1.Location = new Point(1089, 0);
         panel1.Margin = new Padding(4, 3, 4, 3);
         panel1.Name = "panel1";
         panel1.Size = new Size(449, 89);
@@ -158,7 +170,7 @@ partial class MainForm
         // 
         verticalSplitContainer.Panel2.Controls.Add(mainPanel);
         verticalSplitContainer.Panel2.Controls.Add(panelTitle);
-        verticalSplitContainer.Size = new Size(1231, 762);
+        verticalSplitContainer.Size = new Size(1540, 762);
         verticalSplitContainer.SplitterDistance = 328;
         verticalSplitContainer.SplitterWidth = 5;
         verticalSplitContainer.TabIndex = 0;
@@ -191,7 +203,7 @@ partial class MainForm
         mainPanel.Location = new Point(0, 36);
         mainPanel.Margin = new Padding(4, 3, 4, 3);
         mainPanel.Name = "mainPanel";
-        mainPanel.Size = new Size(896, 724);
+        mainPanel.Size = new Size(1205, 724);
         mainPanel.TabIndex = 1;
         // 
         // panelTitle
@@ -201,7 +213,7 @@ partial class MainForm
         panelTitle.Location = new Point(0, 0);
         panelTitle.Margin = new Padding(4, 0, 4, 0);
         panelTitle.Name = "panelTitle";
-        panelTitle.Size = new Size(896, 36);
+        panelTitle.Size = new Size(1205, 36);
         panelTitle.TabIndex = 0;
         panelTitle.TextAlign = ContentAlignment.MiddleCenter;
         // 
@@ -211,24 +223,12 @@ partial class MainForm
         tmrPeriodicUpdate.Interval = 200;
         tmrPeriodicUpdate.Tick += tmrPeriodicUpdate_Tick;
         // 
-        // pictureBox1
-        // 
-        pictureBox1.Dock = DockStyle.Right;
-        pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-        pictureBox1.Location = new Point(636, 0);
-        pictureBox1.Margin = new Padding(4, 3, 4, 3);
-        pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new Size(144, 89);
-        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-        pictureBox1.TabIndex = 4;
-        pictureBox1.TabStop = false;
-        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = SystemColors.Window;
-        ClientSize = new Size(1231, 858);
+        ClientSize = new Size(1540, 858);
         Controls.Add(horizontalSplitContainer);
         Icon = (Icon)resources.GetObject("$this.Icon");
         Margin = new Padding(4, 3, 4, 3);
@@ -238,13 +238,13 @@ partial class MainForm
         horizontalSplitContainer.Panel2.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)horizontalSplitContainer).EndInit();
         horizontalSplitContainer.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         panel1.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)titlePictureBox).EndInit();
         verticalSplitContainer.Panel1.ResumeLayout(false);
         verticalSplitContainer.Panel2.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)verticalSplitContainer).EndInit();
         verticalSplitContainer.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ResumeLayout(false);
     }
 
