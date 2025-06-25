@@ -34,6 +34,8 @@ public partial class MainForm : Form
         AddNode(new CurrentPositionControl(_controller));
         AddNode(new ValApplicationsControl(_controller));
         AddNode(new PhysicalIosControl(_controller));
+        AddNode(new MotionControl(_controller));
+        AddNode(new KinematicsControl(_controller));
         AddNode(new ContactControl());
         AddNode(new LicenseControl());
 
