@@ -1,11 +1,15 @@
-﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Windows.Forms;
+﻿using System.Drawing.Imaging;
 
 public static class ScreenshotsGenerator
 {
+    private static string TrimEnd(this string source, string value)
+    {
+        if (!source.EndsWith(value))
+            return source;
+
+        return source.Remove(source.LastIndexOf(value));
+    }
+
     public static void Generate(MainForm frm)
     {
         var dir = new DirectoryInfo(Path.Combine(Path.GetDirectoryName(typeof(ScreenshotsGenerator).Assembly.Location), "WinformsScreenshots"));
@@ -20,7 +24,7 @@ public static class ScreenshotsGenerator
 
             var bm = new Bitmap(frm.Width, frm.Height);
             frm.DrawToBitmap(bm, new Rectangle(0, 0, bm.Width, bm.Height));
-            bm.Save(Path.Combine(dir.FullName, node.Tag.GetType().Name.Split(new[] { "Control" }, StringSplitOptions.RemoveEmptyEntries)[0] + ".jpg"), ImageFormat.Jpeg);
+            bm.Save(Path.Combine(dir.FullName, node.Tag.GetType().Name.TrimEnd("Control") + ".jpg"), ImageFormat.Jpeg);
         }
 
         Explorer.OpenDirectory(dir.FullName);

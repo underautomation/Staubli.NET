@@ -63,4 +63,22 @@ public partial class KinematicsControl : UserControl, IUserControl
         gridReverseKinematics.ExpandAllGridItems();
 
     }
+
+    private void btnFillWithCurrentPosition_Click(object sender, EventArgs e)
+    {
+       var joints = _controller.Soap.GetCurrentJointPosition((int)udRobot.Value);
+
+        gridJointFK.SelectedObject = joints;
+        gridJointIK.SelectedObject = joints;
+
+        IForwardKinematics fk = _controller.Soap.ForwardKinematics((int)udRobot.Value, joints);
+        gridConfig.SelectedObject = fk.Config;
+        gridConfig.ExpandAllGridItems();
+
+        gridFrame.SelectedObject = fk.Position;
+        gridFrame.ExpandAllGridItems();
+
+        gridRange.SelectedObject = _controller.Soap.GetJointRange((int)udRobot.Value);
+        gridRange.ExpandAllGridItems();
+    }
 }

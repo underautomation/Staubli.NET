@@ -1,7 +1,5 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using UnderAutomation.Staubli;
+﻿using UnderAutomation.Staubli;
+using UnderAutomation.Staubli.Common;
 
 public partial class ConnectControl : UserControl, IUserControl
 {
@@ -16,6 +14,10 @@ public partial class ConnectControl : UserControl, IUserControl
         txtIP.Text = Config.Current.ConnectParameters?.Address ?? "192.168.0.1";
         txtUser.Text = Config.Current.ConnectParameters?.Soap?.User;
         txtPassword.Text = Config.Current.ConnectParameters?.Soap?.Password;
+        if (0 == (Config.Current.ConnectParameters?.Soap?.Port).GetValueOrDefault())
+            udSoapPort.Value = SoapConnectParameters.DEFAULT_PORT;
+        else
+            udSoapPort.Value = Config.Current.ConnectParameters.Soap.Port;
     }
 
     #region IUserControl
@@ -46,6 +48,7 @@ public partial class ConnectControl : UserControl, IUserControl
         parameters.Address = txtIP.Text;
         parameters.Soap.User = txtUser.Text;
         parameters.Soap.Password = txtPassword.Text;
+        parameters.Soap.Port = (int)udSoapPort.Value;
 
         // Connect to the robot
         _controller.Connect(parameters);

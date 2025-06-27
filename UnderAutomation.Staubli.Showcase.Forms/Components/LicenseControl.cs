@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Windows.Forms;
 using UnderAutomation.Staubli;
 using UnderAutomation.Staubli.License;
 

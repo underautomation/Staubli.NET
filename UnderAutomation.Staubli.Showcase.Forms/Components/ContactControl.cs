@@ -1,7 +1,5 @@
-﻿using System.Net;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
-using System.Windows.Forms;
 
 public partial class ContactControl : UserControl, IUserControl
 {

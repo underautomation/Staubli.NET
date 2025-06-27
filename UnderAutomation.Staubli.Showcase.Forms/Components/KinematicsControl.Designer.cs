@@ -38,6 +38,7 @@
         gridConfig = new PropertyGrid();
         gridRange = new PropertyGrid();
         gridReverseKinematics = new PropertyGrid();
+        btnFillWithCurrentPosition = new Button();
         ((System.ComponentModel.ISupportInitialize)udRobot).BeginInit();
         SuspendLayout();
         // 
@@ -55,7 +56,7 @@
         // 
         btnReverseKinematics.Location = new Point(497, 301);
         btnReverseKinematics.Name = "btnReverseKinematics";
-        btnReverseKinematics.Size = new Size(174, 23);
+        btnReverseKinematics.Size = new Size(239, 23);
         btnReverseKinematics.TabIndex = 0;
         btnReverseKinematics.Text = "Get reverse kinematics";
         btnReverseKinematics.UseVisualStyleBackColor = true;
@@ -104,37 +105,37 @@
         gridJointIK.Location = new Point(317, 58);
         gridJointIK.Name = "gridJointIK";
         gridJointIK.PropertySort = PropertySort.NoSort;
-        gridJointIK.Size = new Size(126, 224);
+        gridJointIK.Size = new Size(143, 224);
         gridJointIK.TabIndex = 7;
         gridJointIK.ToolbarVisible = false;
         // 
         // gridFrame
         // 
         gridFrame.HelpVisible = false;
-        gridFrame.Location = new Point(449, 58);
+        gridFrame.Location = new Point(466, 58);
         gridFrame.Name = "gridFrame";
         gridFrame.PropertySort = PropertySort.NoSort;
-        gridFrame.Size = new Size(126, 224);
+        gridFrame.Size = new Size(144, 224);
         gridFrame.TabIndex = 7;
         gridFrame.ToolbarVisible = false;
         // 
         // gridConfig
         // 
         gridConfig.HelpVisible = false;
-        gridConfig.Location = new Point(581, 58);
+        gridConfig.Location = new Point(616, 58);
         gridConfig.Name = "gridConfig";
         gridConfig.PropertySort = PropertySort.NoSort;
-        gridConfig.Size = new Size(201, 224);
+        gridConfig.Size = new Size(153, 224);
         gridConfig.TabIndex = 7;
         gridConfig.ToolbarVisible = false;
         // 
         // gridRange
         // 
         gridRange.HelpVisible = false;
-        gridRange.Location = new Point(788, 58);
+        gridRange.Location = new Point(775, 58);
         gridRange.Name = "gridRange";
         gridRange.PropertySort = PropertySort.NoSort;
-        gridRange.Size = new Size(126, 224);
+        gridRange.Size = new Size(174, 224);
         gridRange.TabIndex = 7;
         gridRange.ToolbarVisible = false;
         // 
@@ -145,9 +146,19 @@
         gridReverseKinematics.Location = new Point(497, 349);
         gridReverseKinematics.Name = "gridReverseKinematics";
         gridReverseKinematics.PropertySort = PropertySort.NoSort;
-        gridReverseKinematics.Size = new Size(174, 328);
+        gridReverseKinematics.Size = new Size(239, 328);
         gridReverseKinematics.TabIndex = 7;
         gridReverseKinematics.ToolbarVisible = false;
+        // 
+        // btnFillWithCurrentPosition
+        // 
+        btnFillWithCurrentPosition.Location = new Point(208, 29);
+        btnFillWithCurrentPosition.Name = "btnFillWithCurrentPosition";
+        btnFillWithCurrentPosition.Size = new Size(174, 23);
+        btnFillWithCurrentPosition.TabIndex = 0;
+        btnFillWithCurrentPosition.Text = "Fill with current position";
+        btnFillWithCurrentPosition.UseVisualStyleBackColor = true;
+        btnFillWithCurrentPosition.Click += btnFillWithCurrentPosition_Click;
         // 
         // KinematicsControl
         // 
@@ -163,6 +174,7 @@
         Controls.Add(label1);
         Controls.Add(udRobot);
         Controls.Add(btnReverseKinematics);
+        Controls.Add(btnFillWithCurrentPosition);
         Controls.Add(btnForwardKinematics);
         Margin = new Padding(4, 3, 4, 3);
         Name = "KinematicsControl";
@@ -185,4 +197,5 @@
     private PropertyGrid gridConfig;
     private PropertyGrid gridRange;
     private PropertyGrid gridReverseKinematics;
+    private Button btnFillWithCurrentPosition;
 }

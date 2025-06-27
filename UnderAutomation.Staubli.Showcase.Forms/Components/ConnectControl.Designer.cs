@@ -36,6 +36,9 @@ partial class ConnectControl
         txtUser = new TextBox();
         label3 = new Label();
         txtPassword = new TextBox();
+        label4 = new Label();
+        udSoapPort = new NumericUpDown();
+        ((System.ComponentModel.ISupportInitialize)udSoapPort).BeginInit();
         SuspendLayout();
         // 
         // label1
@@ -60,7 +63,7 @@ partial class ConnectControl
         // 
         // btnConnect
         // 
-        btnConnect.Location = new Point(66, 220);
+        btnConnect.Location = new Point(66, 299);
         btnConnect.Margin = new Padding(4, 3, 4, 3);
         btnConnect.Name = "btnConnect";
         btnConnect.Size = new Size(88, 27);
@@ -71,7 +74,7 @@ partial class ConnectControl
         // 
         // btnDisconnect
         // 
-        btnDisconnect.Location = new Point(161, 220);
+        btnDisconnect.Location = new Point(161, 299);
         btnDisconnect.Margin = new Padding(4, 3, 4, 3);
         btnDisconnect.Name = "btnDisconnect";
         btnDisconnect.Size = new Size(88, 27);
@@ -83,7 +86,7 @@ partial class ConnectControl
         // lblConnected
         // 
         lblConnected.AutoSize = true;
-        lblConnected.Location = new Point(66, 254);
+        lblConnected.Location = new Point(66, 333);
         lblConnected.Margin = new Padding(4, 0, 4, 0);
         lblConnected.Name = "lblConnected";
         lblConnected.Size = new Size(37, 15);
@@ -129,13 +132,33 @@ partial class ConnectControl
         txtPassword.UseSystemPasswordChar = true;
         txtPassword.KeyDown += btnConnect_Click;
         // 
+        // label4
+        // 
+        label4.AutoSize = true;
+        label4.Location = new Point(63, 210);
+        label4.Margin = new Padding(4, 0, 4, 0);
+        label4.Name = "label4";
+        label4.Size = new Size(68, 15);
+        label4.TabIndex = 0;
+        label4.Text = "SOAP Port :";
+        // 
+        // udSoapPort
+        // 
+        udSoapPort.Location = new Point(66, 228);
+        udSoapPort.Maximum = new decimal(new int[] { 1661992959, 1808227885, 5, 0 });
+        udSoapPort.Name = "udSoapPort";
+        udSoapPort.Size = new Size(120, 23);
+        udSoapPort.TabIndex = 6;
+        // 
         // ConnectControl
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
+        Controls.Add(udSoapPort);
         Controls.Add(lblConnected);
         Controls.Add(btnDisconnect);
         Controls.Add(btnConnect);
+        Controls.Add(label4);
         Controls.Add(txtPassword);
         Controls.Add(label3);
         Controls.Add(txtUser);
@@ -145,6 +168,7 @@ partial class ConnectControl
         Margin = new Padding(4, 3, 4, 3);
         Name = "ConnectControl";
         Size = new Size(734, 532);
+        ((System.ComponentModel.ISupportInitialize)udSoapPort).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -160,4 +184,6 @@ partial class ConnectControl
     private TextBox txtUser;
     private Label label3;
     private TextBox txtPassword;
+    private Label label4;
+    private NumericUpDown udSoapPort;
 }
