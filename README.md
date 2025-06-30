@@ -8,89 +8,181 @@
 [![.NET Core](https://img.shields.io/badge/.NET_Core-2.0+-blueviolet)](#)
 [![.NET Versions](https://img.shields.io/badge/.NET-5_6_8_9-blueviolet)](#)
 
-### 🤖 Effortlessly Communicate with Staubli robots
+### 🤖 Effortlessly Communicate with Staubli Robots
 
-The **Staubli SDK** enables seamless integration with Staubli robots for automation, data exchange, and remote control. Ideal for industrial automation, research, and advanced robotics applications.
+The **Staubli Communication SDK** provides high-level access to industrial Staubli robots via the native SOAP protocol. Designed for automation engineers, researchers, and integrators, this SDK supports full motion control, I/O access, system monitoring, and application management.
 
-🔗 **More Information:** [https://underautomation.com/Staubli](https://underautomation.com/Staubli)  
-🔗 Also available for **[🟨 LabVIEW](https://github.com/underautomation/Staubli.vi)** & **[🐍 Python](https://github.com/underautomation/Staubli.py)**
-
----
-
-[⭐ Star if you like it !](https://github.com/underautomation/Staubli.NET/stargazers)
-
-[👁️ Watch to be notified of latest updates !](https://github.com/underautomation/Staubli.NET/watchers)
+🔗 **More Information:** [Documentation](https://underautomation.com/Staubli/documentation)  
+🔗 Available also for **[🟨 LabVIEW](https://github.com/underautomation/Staubli.vi)** & **[🐍 Python](https://github.com/underautomation/Staubli.py)**
 
 ---
 
-## 🚀 TL;DR (Too Long; Didn’t Read)
+## 🚀 TL;DR
 
-A powerful and efficient .NET library for communicating with Staubli industrial robots using the SOAP native protocol. Enables seamless connectivity, motion control, and data acquisition.
+✅ Seamlessly connect to Staubli controllers using native SOAP.  
+✅ Control movements, read/write I/Os, monitor status, and manage applications.  
+✅ No additional licenses or Staubli software needed.
 
-✅ No additional installations or Staubli options are required to use this SDK.
+**Highlights:**
 
-**Key Benefits:**
-
-- 📡 **Fast & Reliable**: Leverage high-speed SOAP communication for real-time control.
-- 🛠️ **Easy Integration**: Works with .NET projects, compatible with VB.NET and C#.
-- 🤖 **Advanced Features**: Supports status monitoring, alarm handling, job selection, and more.
-- 🌎 **Cross-Platform**: Works with Windows/Linux using .NET Core.
+- ⚡ Real-time SOAP communication
+- 🛠️ Works with .NET Framework, Core, Standard
+- 🔁 Full motion lifecycle & kinematics
+- 📡 Access to physical & logical I/Os
+- 📦 Project & task management (VAL 3)
 
 ---
 
 ## 📥 Download Example Applications
 
-Explore the **Staubli SDK** with fully functional example applications and precompiled binaries for various platforms. [See Github releases](https://github.com/underautomation/Staubli.NET/releases)
+Explore precompiled examples from the [GitHub Releases](https://github.com/underautomation/Staubli.NET/releases)
 
-### 🔹 Windows Forms Application (Full Feature Showcase)
+### ✅ Windows Forms Showcase
 
-A Windows Forms application demonstrating all the features of the library.
-
-📌 **Download:** [📥 UnderAutomation.Staubli.Showcase.Forms.exe](https://github.com/underautomation/Staubli.NET/releases/latest/download/UnderAutomation.Staubli.Showcase.Forms.exe)
+🔹 **Download:** [📥 UnderAutomation.Staubli.Showcase.Forms.exe](https://github.com/underautomation/Staubli.NET/releases/latest/download/UnderAutomation.Staubli.Showcase.Forms.exe)
 
 ---
 
-## Features ✨
+## ✨ Features
 
-### Connect to the Robot
+### 🔌 Connection
 
 ```csharp
-// Connect to the robot
-var robot = new StaubliRobot();
-robot.Connect("192.168.0.1");
+var controller = new StaubliController();
+var parameters = new ConnectionParameters("192.168.0.1");
 
-// Ensure robot is connected
-bool isConnected = robot.HighSpeedEServer.Connected;
+parameters.Soap.Enable = true;
+parameters.Soap.User = "default";
+parameters.Soap.Password = "default";
+
+controller.Connect(parameters);
 ```
-
-## 🔍 Compatibility
-
-✅ **Supported Robots:** CS8, CS9
-✅ **Operating Systems:** Windows, Linux, macOS  
-✅ **.NET Versions:** .NET Framework (≥3.5), .NET Standard, .NET Core, .NET 5/6/8/9
 
 ---
 
-## 📢 Contributing
+### 🔍 System Information
 
-We welcome contributions! Feel free to:
+- Get robots connected (`GetRobots()`)
+- Get controller parameters (`GetControllerParameters()`)
+- Retrieve DH parameters (`GetDhParameters()`)
 
-- Report issues via [GitHub Issues](https://github.com/underautomation/Staubli.NET/issues)
-- Submit pull requests with improvements
-- Share feedback & feature requests
+```csharp
+Robot[] robots = controller.Soap.GetRobots();
+Parameter[] controllerParams = controller.Soap.GetControllerParameters();
+DhParameters[] dh = controller.Soap.GetDhParameters(robot: 0);
+```
+
+---
+
+### 📍 Position & Joints
+
+- `GetCurrentJointPosition()`
+- `GetCurrentCartesianJointPosition()`
+
+```csharp
+CartesianJointPosition pos = controller.Soap.GetCurrentCartesianJointPosition(robot: 0);
+double[] joints = pos.JointsPosition;
+```
+
+---
+
+### 🧠 Kinematics
+
+- Forward Kinematics: `ForwardKinematics()`
+- Inverse Kinematics: `ReverseKinematics()`
+
+```csharp
+IForwardKinematics fk = controller.Soap.ForwardKinematics(0, joints);
+IReverseKinematics ik = controller.Soap.ReverseKinematics(0, joints, fk.Position, fk.Config, range);
+```
+
+---
+
+### ⚙️ Motion Control
+
+- Power: `SetPower(true/false)`
+- Motion types: `MoveL`, `MoveJC`, `MoveJJ`, `MoveC`
+- Motion lifecycle: `StopMotion`, `ResetMotion`, `RestartMotion`
+
+```csharp
+controller.Soap.SetPower(true);
+controller.Soap.MoveL(0, targetFrame, motionDesc);
+```
+
+---
+
+### 📡 I/O Management
+
+- List physical I/Os: `GetAllPhysicalIos()`
+- Read: `ReadIos(...)`
+- Write: `WriteIos(...)`
+
+```csharp
+PhysicalIo[] ios = controller.Soap.GetAllPhysicalIos();
+PhysicalIoWriteResponse[] res = controller.Soap.WriteIos(new[] { "out1" }, new[] { 1.0 });
+```
+
+---
+
+### 📦 Application Management
+
+- Load project: `LoadProject("Disk://myProject.pjx")`
+- List applications: `GetValApplications()`
+- Stop/unload apps: `StopApplication()`, `StopAndUnloadAll()`
+
+```csharp
+controller.Soap.LoadProject("Disk://project.pjx");
+ValApplication[] apps = controller.Soap.GetValApplications();
+controller.Soap.StopAndUnloadAll();
+```
+
+---
+
+### 🔁 Task Lifecycle
+
+- List tasks: `GetTasks()`
+- Control: `TaskKill`, `TaskSuspend`, `TaskResume`
+
+```csharp
+ControllerTask[] tasks = controller.Soap.GetTasks();
+controller.Soap.TaskKill(tasks[0].Name, tasks[0].CreatedBy);
+```
+
+---
+
+## ✅ Compatibility
+
+- **Controllers:** CS8, CS9
+- **OS:** Windows, Linux, macOS
+- **.NET Versions:** Framework 3.5+, .NET Core 2.0+, .NET 5/6/8/9
 
 ---
 
 ## 📜 License
 
-**⚠️ This SDK requires a commercial license.**  
-🔗 Learn more: [UnderAutomation Licensing](https://underautomation.com/Staubli/eula)
+**⚠️ Commercial license required**
+🔗 [View EULA](https://underautomation.com/Staubli/eula)
+
+---
+
+## 🤝 Contributing
+
+You're welcome to:
+
+- Submit issues & PRs
+- Share feature suggestions
+- Help improve documentation
+
+👉 [Contribute on GitHub](https://github.com/underautomation/Staubli.NET)
 
 ---
 
 ## 📬 Need Help?
 
-If you have any questions or need support:
+- 📚 [Documentation](https://underautomation.com/Staubli/documentation)
+- 📩 [Contact Support](https://underautomation.com/contact)
 
-- 📖 **Check the Docs**: [Documentation](https://underautomation.com/Staubli/documentation)
-- 📩 **Contact Us**: [Support](https://underautomation.com/contact)
+---
+
+[⭐ Star the repo if useful](https://github.com/underautomation/Staubli.NET/stargazers)
+[👁️ Watch for updates](https://github.com/underautomation/Staubli.NET/watchers)

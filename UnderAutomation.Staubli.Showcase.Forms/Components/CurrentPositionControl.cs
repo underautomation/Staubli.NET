@@ -15,10 +15,10 @@ public partial class CurrentPositionControl : UserControl, IUserControl
         TypeDescriptor.AddAttributes(typeof(CartesianJointPosition), new ReadOnlyAttribute(true));
         // make grid expandable
         TypeDescriptor.AddAttributes(typeof(CartesianJointPosition), new TypeConverterAttribute(typeof(ObjectConverter)));
-        TypeDescriptor.AddAttributes(typeof(CartesianPos), new TypeConverterAttribute(typeof(ObjectConverter)));
+        TypeDescriptor.AddAttributes(typeof(CartesianPosition), new TypeConverterAttribute(typeof(ObjectConverter)));
 
-        gridFrame.SelectedObject = new CartesianPos();
-        gridTool.SelectedObject = new CartesianPos();
+        gridFrame.SelectedObject = new CartesianPosition();
+        gridTool.SelectedObject = new CartesianPosition();
     }
 
     #region IUserControl
@@ -36,10 +36,10 @@ public partial class CurrentPositionControl : UserControl, IUserControl
 
     private void btnGetCartesianPosition_Click(object sender, EventArgs e)
     {
-        CartesianJointPosition position = _controller.Soap.GetCurrentCartesianPosition(
+        CartesianJointPosition position = _controller.Soap.GetCurrentCartesianJointPosition(
             (int)udRobot.Value,
-            (CartesianPos)gridTool.SelectedObject,
-            (CartesianPos)gridFrame.SelectedObject);
+            (CartesianPosition)gridTool.SelectedObject,
+            (CartesianPosition)gridFrame.SelectedObject);
 
         gridCartesianJointsPosition.SelectedObject = position;
         gridCartesianJointsPosition.ExpandAllGridItems();
