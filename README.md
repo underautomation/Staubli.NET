@@ -58,6 +58,9 @@ parameters.Soap.Password = "default";
 controller.Connect(parameters);
 ```
 
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/Connect.jpg)
+
+
 ---
 
 ### 🔍 System Information
@@ -72,6 +75,9 @@ Parameter[] controllerParams = controller.Soap.GetControllerParameters();
 DhParameters[] dh = controller.Soap.GetDhParameters(robot: 0);
 ```
 
+
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/ControllerInfo.jpg)
+
 ---
 
 ### 📍 Position & Joints
@@ -84,6 +90,9 @@ CartesianJointPosition pos = controller.Soap.GetCurrentCartesianJointPosition(ro
 double[] joints = pos.JointsPosition;
 ```
 
+
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/CurrentPosition.jpg)
+
 ---
 
 ### 🧠 Kinematics
@@ -95,6 +104,10 @@ double[] joints = pos.JointsPosition;
 IForwardKinematics fk = controller.Soap.ForwardKinematics(0, joints);
 IReverseKinematics ik = controller.Soap.ReverseKinematics(0, joints, fk.Position, fk.Config, range);
 ```
+
+
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/Kinematics.jpg)
+
 
 ---
 
@@ -109,6 +122,8 @@ controller.Soap.SetPower(true);
 controller.Soap.MoveL(0, targetFrame, motionDesc);
 ```
 
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/Motion.jpg)
+
 ---
 
 ### 📡 I/O Management
@@ -121,6 +136,8 @@ controller.Soap.MoveL(0, targetFrame, motionDesc);
 PhysicalIo[] ios = controller.Soap.GetAllPhysicalIos();
 PhysicalIoWriteResponse[] res = controller.Soap.WriteIos(new[] { "out1" }, new[] { 1.0 });
 ```
+
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/PhysicalIos.jpg)
 
 ---
 
@@ -135,6 +152,10 @@ controller.Soap.LoadProject("Disk://project.pjx");
 ValApplication[] apps = controller.Soap.GetValApplications();
 controller.Soap.StopAndUnloadAll();
 ```
+
+
+![UnderAutomation Staubli communication SDK](https://raw.githubusercontent.com/underautomation/Staubli.NET/refs/heads/main/.github/assets/ValApplications.jpg)
+
 
 ---
 
