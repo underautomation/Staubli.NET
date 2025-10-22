@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UnderAutomation.Staubli</name>
+    </assembly>
+    <members>
+        <member name="T:UnderAutomation.Staubli.Common.SoapConnectParameters">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Common.SoapConnectParameters.DEFAULT_PORT">
+            <summary>
+            Default port for SOAP service
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Common.SoapConnectParameters.Enable">
+            <summary>
+            Should use this service (default: true)
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.ConnectionParameters">
+            <summary>
+            Connection parameters
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.ConnectionParameters.#ctor">
+            <summary>
+            Instanciate a new connection parameters
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.ConnectionParameters.#ctor(System.String)">
+            <summary>
+            Instanciate a new connection parameters with a specified address
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.ConnectionParameters.Address">
+            <summary>
+            Address of the robot (IP or host name) 
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.ConnectionParameters.PingBeforeConnect">
+            <summary>
+            Send a ping command before initializing any connections
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.ConnectionParameters.Soap">
+            <summary>
+            Soap connection parameters
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.License.LicenseInfo">
+            <summary>
+            Information about a license key
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.#ctor(System.String,System.String)">
+            <summary>
+            Create a new LicenseInfo instance to retrieve informations about a pair of identifier/key
+            This class should not be used to register your product. Please use static function RegisterLicense to specify your license.
+            </summary>
+            <param name="licenseIdentifier">The name of your organization (null for trial version)</param>
+            <param name="licenseKey">The key, associated to the identifier, supplied by UnderAutomation (null for trial version)</param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.AssertIsLicensed">
+            <summary>
+            Throw a InvalidLicenseException if the license is not valid
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseKey">
+            <summary>
+            The license key supplied by UnderAutomation (null for trial period)
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.Product">
+            <summary>
+            Commercial name of this .NET Software library
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.EvaluationDaysLeft">
+            <summary>
+            Remaining days of the trial period. Null if the product is licensed. It could be negative if the trial period is ended since several days.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.EvaluationStartDate">
+            <summary>
+            The date the trial period starts. If the product is licensed, the date of the library first use.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.Licensee">
+            <summary>
+            Name of your organisation
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.TrialPeriodExpirationDate">
+            <summary>
+            The date the product will expire. Null if the product is licensed.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.State">
+            <summary>
+            The current license state
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.ProductReleaseDate">
+            <summary>
+            The date this version of the product was released.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.MaintenanceYears">
+            <summary>
+            Number of maintenance years included in your license
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseIssuedDate">
+            <summary>
+            The date you get the license
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.MaintenanceExpirationDate">
+            <summary>
+            The date your maintenance contract end and you no longer can use this license with newer versions.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.ToString">
+            <summary>
+            A human description of the license
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.License.LicenseState">
+            <summary>
+            States that can take a license
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.None">
+            <summary>
+            No license has been provided
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Invalid">
+            <summary>
+            The pair License Identifier and License Key are incompatible, you cannot use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Trial">
+            <summary>
+            The library is in a trial period, you can use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.ExtraTrial">
+            <summary>
+            The library is in an extra trial period, you can use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Expired">
+            <summary>
+            The trial period as expired, you no more can use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.MaintenanceNeeded">
+            <summary>
+            Your license does not allow you to use such a recent release. Please buy maintenance to use this version
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Licensed">
+            <summary>
+            Congratulations, the library is licensed.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.License.InvalidLicenseException">
+            <summary>
+            Exception thrown while using the product if the license is not valid.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.InvalidLicenseException.LicenseInfo">
+            <summary>
+            The license that causes this exception
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition">
+            <summary>
+            Represents the joint positions and the Cartesian position of a robot end effector.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition.JointsPosition">
+            <summary>
+            The joint positions in radians.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition.CartesianPosition">
+            <summary>
+            The Cartesian position of the robot end effector.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.Frame">
+             <summary>
+             Represents a 3D transformation composed of orientation (a 3x3 rotation matrix)
+             and position (a translation vector) in space.
+             Used to define the pose of a robot or tool in a 3D environment.
+            
+             Matrix representation:
+             [ Nx  Ox  Ax  Px ]
+             [ Ny  Oy  Ay  Py ]
+             [ Nz  Oz  Az  Pz ]
+             [  0   0   0   1 ]
+             </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Nx">
+            <summary>
+            X component of the local X-axis vector (Normal X).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Ny">
+            <summary>
+            Y component of the local X-axis vector (Normal Y).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Nz">
+            <summary>
+            Z component of the local X-axis vector (Normal Z).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Ox">
+            <summary>
+            X component of the local Y-axis vector (Orientation X).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Oy">
+            <summary>
+            Y component of the local Y-axis vector (Orientation Y).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Oz">
+            <summary>
+            Z component of the local Y-axis vector (Orientation Z).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Ax">
+            <summary>
+            X component of the local Z-axis vector (Approach X).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Ay">
+            <summary>
+            Y component of the local Z-axis vector (Approach Y).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Az">
+            <summary>
+            Z component of the local Z-axis vector (Approach Z).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Px">
+            <summary>
+            X coordinate of the frame's origin in global space (Pose X).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Py">
+            <summary>
+            Y coordinate of the frame's origin in global space (Pose Y).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Frame.Pz">
+            <summary>
+            Z coordinate of the frame's origin in global space (Pose Z).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Frame.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.Success">
+            <summary>
+            Success, no error occurred.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalIo">
+            <summary>
+            Represents a physical I/O on the robot.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIo.Name">
+            <summary>
+            Name of the physical I/O.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIo.Description">
+            <summary>
+            Description of the physical I/O.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIo.TypeStr">
+            <summary>
+            Type of the physical I/O (e.g., din, dout, ain, serial, ...).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIo.Lockable">
+            <summary>
+            Indicates whether the physical I/O is lockable.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Errors.CustomSoapException">
+            <summary>
+            Custom exception class for handling SOAP errors with specific error codes and descriptions.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Errors.CustomSoapException.ErrorCodeText">
+            <summary>
+            The error code text as received from the SOAP response, formatted as a kebab-case string.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Errors.CustomSoapException.ErrorCode">
+            <summary>
+            The error code as an enum value, parsed from the ErrorCodeText.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Errors.CustomSoapException.Description">
+            <summary>
+            A human-readable description of the error, providing additional context about the failure.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Errors.CustomSoapException.Message">
+            <summary>
+            Gets the error message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.SoapClientBase">
+            <summary>
+            Base class for SOAP client
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.Ip">
+            <summary>
+            Connected robot IP address or host name
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.Port">
+            <summary>
+            SOAP TCP port
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.SessionId">
+            <summary>
+            Session ID for the SOAP connection
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.ConnectInternal(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Connect to a robot
+            </summary>
+            <param name="ip">IP or network name of the robot</param>
+            <param name="user">Username for the SOAP service</param>
+            <param name="password">Password for the SOAP service</param>
+            <param name="port">Port of the SOAP service (default: 851)</param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.Disconnect">
+            <summary>
+            Disconnect SOAP client from robot
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.Enabled">
+            <summary>
+            Check if the SOAP client is connected to a robot
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetRobots">
+            <summary>
+            Get all the robots handled by this controller
+            </summary>
+            <returns>List of all robots</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetCurrentCartesianJointPosition(System.Int32,UnderAutomation.Staubli.Soap.Data.CartesianPosition,UnderAutomation.Staubli.Soap.Data.CartesianPosition)">
+            <summary>
+            Get the Cartesian position and joint positions of a robot
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="tool">Tool pose in flange frame. If null, the position of the flange is returned</param>
+            <param name="frame">Frame in which the Cartesian position of the tool is returned</param>
+            <returns>Robot joint position and specified tool current cartesian position</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetCurrentJointPosition(System.Int32)">
+            <summary>
+            Get the current joint position of a robot
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <returns>Position of each axis in radians</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetControllerParameters">
+            <summary>
+            Get the current Cartesian position of a robot end effector
+            </summary>
+            <returns>List of parameters</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetValApplications">
+            <summary>
+            Get all the VAL applications available on the controller
+            </summary>
+            <returns>List of all applications</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetJointRange(System.Int32)">
+            <summary>
+            Get the range Min-Max of each joint of a robot
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <returns>The range of each axis</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetAllPhysicalIos">
+            <summary>
+            Get all the physical I/O values of the controller
+            </summary>
+            <returns>Array of physical I/O</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetDhParameters(System.Int32)">
+            <summary>
+            Get Robot DH parameters
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <returns>DH parameters</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.GetTasks">
+            <summary>
+            Get all the tasks available on the controller
+            </summary>
+            <returns>Array of robot task</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.ReadIos(System.String[])">
+            <summary>
+            Read the state of specified physical I/Os
+            </summary>
+            <param name="ios">I/O names to read</param>
+            <returns>Array of physical I/O states</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.StartApplication(System.String)">
+            <summary>
+            Start a VAL application on the controller
+            </summary>
+            <param name="applicationPath">Path to the VAL application to start</param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.StopAndUnloadAll">
+            <summary>
+            Stop all VAL applications on the controller
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.StopApplication">
+            <summary>
+            Stop application on the controller
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.TaskKill(System.String,System.String)">
+            <summary>
+            Kill a task on the controller
+            </summary>
+            <param name="taskName">Name of the task to kill</param>
+            <param name="createdBy"></param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.TaskResume(System.String,System.String)">
+            <summary>
+            Resume a task on the controller
+            </summary>
+            <param name="taskName">Name of the task to suspend</param>
+            <param name="createdBy"></param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.TaskSuspend(System.String,System.String)">
+            <summary>
+            Suspend a task on the controller
+            </summary>
+            <param name="taskName">Name of the task to suspend</param>
+            <param name="createdBy"></param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.WriteIos(System.String[],System.Double[])">
+            <summary>
+            Write values to specified physical I/Os
+            </summary>
+            <param name="ios">I/O names to write</param>
+            <param name="values">Values to write to the I/Os</param>
+            <returns>Array of physical I/O write responses</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.LoadProject(System.String)">
+            <summary>
+            Load a project in memory from disk (does not start it)
+            </summary>
+            <param name="projectPath">Path to the project file on the controller</param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.ForwardKinematics(System.Int32,System.Double[])">
+            <summary>
+            Calculate the forward kinematics of a robot based on its joint positions
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="joints"> Joint positions in radians</param>
+            <returns> IForwardKinematics containing the calculated Cartesian position and orientation of the robot end effector</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.ReverseKinematics(System.Int32,System.Double[],UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Config,UnderAutomation.Staubli.Soap.Data.JointRange)">
+            <summary>
+            Calculate the reverse kinematics of a robot to reach a target position and orientation
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="joint">Initial joint positions in radians, used as a starting point for the calculation</param>
+            <param name="target">Target position and orientation to reach</param>
+            <param name="config">Configuration for the reverse kinematics calculation, such as orientation constraints</param>
+            <param name="jointRange">Range of each joint, used to limit the search space for the solution</param>
+            <returns> IReverseKinematics containing the calculated joint positions to reach the target position and orientation</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.MoveC(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Move the robot to a target position using a Cartesian path
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="frameB"> Starting position and orientation of the robot end effector</param>
+            <param name="frameC"> Target position and orientation of the robot end effector</param>
+            <param name="mdesc"> Motion description containing parameters such as speed, acceleration, ...</param>
+            <returns>IMoveResult containing the result of the move operation, such as success status and any errors encountered</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.MoveJC(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Move the robot to a target position using a Cartesian path with joint constraints
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="frame"> Target position and orientation of the robot end effector</param>
+            <param name="mdesc"> Motion description containing parameters such as speed, acceleration, ...</param>
+            <returns>IMoveResult containing the result of the move operation, such as success status and any errors encountered</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.MoveJJ(System.Int32,System.Double[],UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Move the robot to a target position using joint positions
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="joints"> Joint positions in radians to reach the target position</param>
+            <param name="mdesc"> Motion description containing parameters such as speed, acceleration, ...</param>
+            <returns>IMoveResult containing the result of the move operation, such as success status and any errors encountered</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.MoveL(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Move the robot to a target position using a linear path in Cartesian space
+            </summary>
+            <param name="robot">Id of the robot (a controller can handle multiple robots, see method GetRobots()). Use 0 if you only have one robot</param>
+            <param name="frame"> Target position and orientation of the robot end effector</param>
+            <param name="mdesc"> Motion description containing parameters such as speed, acceleration, ...</param>
+            <returns>IMoveResult containing the result of the move operation, such as success status and any errors encountered</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.ResetMotion">
+            <summary>
+            Reset the motion of the robot
+            </summary>
+            <returns>MotionReturnCode indicating the result of the reset operation</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.RestartMotion">
+            <summary>
+            Restart the motion of the robot
+            </summary>
+            <returns>MotionReturnCode indicating the result of the restart operation</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.StopMotion">
+            <summary>
+            Stop the motion of the robot immediately
+            </summary>
+            <returns>MotionReturnCode indicating the result of the restart operation</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.SetPower(System.Boolean)">
+            <summary>
+            Set the power state of the robot (controller mut be in remote mode)
+            </summary>
+            <param name="power">true to power on the robot, false to power off</param>
+            <returns>PowerReturnCode indicating the result of the operation</returns>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.SoapClientInternal">
+            <summary>
+            Internal class for SOAP client, do not use directly
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.SoapConnectParametersBase">
+            <summary>
+            Base class for SOAP connection parameters
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapConnectParametersBase.User">
+            <summary>
+            Username for the SOAP service (default: default)
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapConnectParametersBase.Password">
+            <summary>
+            Password for the SOAP service (default: default)
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapConnectParametersBase.Port">
+            <summary>
+            Port of the SOAP service (default: 851)
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.SoapClient">
+            <summary>
+            SOAP client for Staubli robots
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.SoapClient.#ctor">
+            <summary>
+            Create a new instance of SoapClient
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.SoapClient.Connect(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Connect to a robot
+            </summary>
+            <param name="ip">IP or network name of the robot</param>
+            <param name="user">Username for the SOAP service</param>
+            <param name="password">Password for the SOAP service</param>
+            <param name="port">Port of the SOAP service</param>
+        </member>
+        <member name="T:UnderAutomation.Staubli.StaubliController">
+            <summary>
+            Main class of the SDK that represents a connection to a Staubli robot controller
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.StaubliController.#ctor">
+            <summary>
+            Instanciate a new Staubli robot controller connection
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.StaubliController.Connect(System.String)">
+            <summary>
+            Connect to robot by IP with default connection parameters
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.StaubliController.Address">
+            <summary>
+            IP or robot name
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.StaubliController.Connect(UnderAutomation.Staubli.ConnectionParameters)">
+            <summary>
+            Initialize a conenction to the robot with specified parameters
+            </summary>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:UnderAutomation.Staubli.StaubliController.Disconnect">
+            <summary>
+            Disconnect all services connected to the robot
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.StaubliController.Enabled">
+            <summary>
+            Check if the robot is connected
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.StaubliController.RegisterLicense(System.String,System.String)">
+            <summary>
+            If you have a license And a key, please call this static method to register the product And exit the trial period
+            ou can register a product even if the trial period has ended
+            </summary>
+            <param name="licensee">Your organization name</param>
+            <param name="key">The associated key supplied by UnderAutomation</param>
+            <returns>Information about the supplied license</returns>
+        </member>
+        <member name="P:UnderAutomation.Staubli.StaubliController.LicenseInfo">
+            <summary>
+            Return information about your license
+            </summary>
+        </member>
+    </members>
+</doc>
