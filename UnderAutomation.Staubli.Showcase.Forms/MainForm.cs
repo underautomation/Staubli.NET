@@ -6,7 +6,7 @@ public partial class MainForm : Form
     // Staubli instance that handles connection to the robot
     private readonly StaubliController _controller = new StaubliController();
 
-    private static MainForm Instance;
+    internal static MainForm Instance;
 
     #region Initialisation
     public MainForm()
@@ -134,9 +134,16 @@ I have this exception that prevents me from using the full capabilities of the S
     // Open browser to documentation page
     private void lblLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
+        OpenUrl("https://underautomation.com/Staubli");
+    }
+    #endregion
+
+    internal void OpenUrl(string url)
+    {
+        if (string.IsNullOrEmpty(url)) return;
         try
         {
-            var ps = new ProcessStartInfo("https://underautomation.com/Staubli")
+            var ps = new ProcessStartInfo(url)
             {
                 UseShellExecute = true,
                 Verb = "open"
@@ -145,7 +152,6 @@ I have this exception that prevents me from using the full capabilities of the S
         }
         catch { }
     }
-    #endregion
 
     // Timer callback to refresh the control on the right and the left menu
     private void tmrPeriodicUpdate_Tick(object sender, EventArgs e)

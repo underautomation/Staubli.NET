@@ -1,14 +1,14 @@
-# LICENSE AGREEMENT FOR "UNDERAUTOMATION STAUBLI .NET SDK"
+# LICENSE AGREEMENT FOR COMMUNICATION AND TOOLKIT STAUBLI SOFTWARE LIBRARY
 
-IMPORTANT-READ CAREFULLY: This End-User License Agreement (the "Agreement") is a legal Agreement between you (individual, company or legal entity) and UnderAutomation for the use of "UNDERAUTOMATION STAUBLI .NET SDK". "UNDERAUTOMATION STAUBLI .NET SDK" is not for sale, it can only be licensed.
-By installing, copying, or otherwise using and testing "UNDERAUTOMATION STAUBLI .NET SDK", you automatically agree to be bound by the terms of this Agreement. If you do not agree to the terms of this Agreement, do not install or use "UNDERAUTOMATION STAUBLI .NET SDK".
-Any reproduction or redistribution of "UNDERAUTOMATION STAUBLI .NET SDK" or any of its components not in accordance with this Agreement is expressly prohibited by law, and may result in severe civil and criminal penalties. "UNDERAUTOMATION STAUBLI .NET SDK" is protected by the copyright law and the laws and international agreements on intellectual property rights.
+IMPORTANT-READ CAREFULLY: This End-User License Agreement (the "Agreement") is a legal Agreement between you (individual, company or legal entity) and UnderAutomation for the use of "Communication & Toolkit Staubli Software Library". "Communication & Toolkit Staubli Software Library" is not for sale, it can only be licensed.
+By installing, copying, or otherwise using and testing "Communication & Toolkit Staubli Software Library", you automatically agree to be bound by the terms of this Agreement. If you do not agree to the terms of this Agreement, do not install or use "Communication & Toolkit Staubli Software Library".
+Any reproduction or redistribution of "Communication & Toolkit Staubli Software Library" or any of its components not in accordance with this Agreement is expressly prohibited by law, and may result in severe civil and criminal penalties. "Communication & Toolkit Staubli Software Library" is protected by the copyright law and the laws and international agreements on intellectual property rights.
 You may not accept this Agreement if you are not of legal age to form a binding contract, if you have no authority to bind your company or organization to this agreement, or if you are a person barred from using the software under the laws of any country.
 
 ## 1. DEFINITIONS
 
 The following terms have specific meanings in this Agreement:
-Software is the "UNDERAUTOMATION STAUBLI .NET SDK", which includes its DLL files, documentation, examples, etc.
+Software is the "Communication & Toolkit Staubli Software Library", which includes its DLL files, documentation, examples, etc.
 Application is a computer program, which includes the Software, but adds significant functionality besides that provided by the Software.
 End User is a user for which the Application was built.
 Customer is your customer, whom you sell or license your Application.
@@ -42,26 +42,24 @@ License is the acquisition of (and payment for) the particular non-exclusive rig
 
 3.4. Nothing in this Agreement is a commitment to you of compatibility between the Software and any future versions of the Software.
 
-3.5. There are 2 types of Licenses issued for the Software:
-Company Site License :
-This License is granted to the company, which name is specified in registration data of the License. This License can be granted also to an individual.
-This License can be used by any Developer from one Development Office of the registered company.
-This License cannot be transferred to any other company or individual.
-Software may be used within Licensee’s organization at the location specified (specify company name and address during checkout).
-Software is delivered as a compiled assembly. Its internal source code is not provided.
+3.5. TYPES OF LICENSES AND SITE DEFINITION
+Site Definition and Remote Work: The License is granted on a per-Site basis to the individual or company specified in the registration data ("Licensee"). A "Development Site" is defined as a single physical office location or address where the Software is used.
 
-Source License :
-This License is granted to the company, which name is specified in registration data of the License. This License can be granted also to an individual.
-This License can be used by any Developer from one Development Office of the registered company.
-This License cannot be transferred to any other company or individual.
-Software may be used within Licensee’s organization at the location specified (specify company name and address during checkout).
-Software is delivered as a Visual Studio solution made of comprehensive and commented code.
+- Multi-Site Organizations: If the Licensee operates multiple Development Sites, a separate License must be purchased for each physical location where the Software is used.
+- Remote Work: Developers working remotely (e.g., home office, travel) are covered by the License of the Development Site they are administratively attached to or report to.
+- Full Remote Organizations: For companies without any physical development office ("Full Remote"), the entire registered legal entity is considered a single Development Site.
 
-3.6 The company name or Developer name can be specified in registration data of the License as License owner.
+License Types: There are 3 types of Licenses issued for the Software:
 
-3.7 The License allows to develop and test Applications.
+- Standard License: This License is granted to the Licensee for use at one (1) Development Site. It allows any Developer attached to that Site to use the Software. This License cannot be transferred to any other company, legal entity, or separate Development Site. The Software is delivered as a compiled assembly. Its internal source code is not provided.
+- Pro License: This License is granted to the Licensee for use at one (1) Development Site. It allows any Developer attached to that Site to use the Software. This License cannot be transferred to any other company, legal entity, or separate Development Site. The Software is delivered as a compiled assembly. Its internal source code is not provided.
+- Source License: This License is granted to the Licensee for use at one (1) Development Site. It allows any Developer attached to that Site to use the Software. This License cannot be transferred to any other company, legal entity, or separate Development Site. The Software is delivered as comprehensive and commented source code (Visual Studio solution or equivalent source files).
 
-3.8 The License allows royalty free deployment of the Software redistributable assemblies.
+  3.6 The company name or Developer name can be specified in registration data of the License as License owner.
+
+  3.7 The License allows to develop and test Applications.
+
+  3.8 The License allows royalty free deployment of the Software redistributable assemblies.
 
 ## 4. SOFTWARE USAGE.
 
@@ -75,13 +73,13 @@ Software is delivered as a Visual Studio solution made of comprehensive and comm
 
 4.5. If you have purchased a License, you can use source codes of demo Applications, which are included in the distributive package of the Software, in your Applications.
 
-4.6. If you have purchased a Company Site License, you can distribute the file "UnderAutomation.Staubli.dll" with your Application.
+4.6. If you have purchased a license, you can distribute the file "UnderAutomation.Staubli.dll" with your Application.
 
 4.7. You cannot include into your Application any file of Software except for the files referred to in paragraph 4.6.
 
 4.8. You cannot use, copy, emulate, clone, rent, lease, sell or transfer the Software, or any subset of the Software, except as provided for in this agreement.
 
-4.9. You cannot use Software to create a service or utility, which exposes the functionality of Software to other users in such a way as to compete, directly or indirectly, with the Software.
+4.9. Competitive Restriction. You cannot use the Software to develop, publish, or distribute a software development kit (SDK), library, API wrapper, or middleware that generally exposes the Software's core functionality to other developers in a way that functions as a direct substitute for the Software. Creating specialized end-user applications or niche tools that utilize the Software remains fully permitted, provided they do not primarily serve as a generic programming interface.
 
 4.10. You cannot create DLLs, or any other derivative tools to be used in design mode in any development tools, which includes Software.
 
@@ -89,31 +87,39 @@ Software is delivered as a Visual Studio solution made of comprehensive and comm
 
 4.12. You cannot transfer or assign this Agreement or your License to any third party.
 
-4.13. You cannot allow further redistribution of our Software by your Customers.
+4.13. Redistribution by Customers (OEM Rights). Notwithstanding the restrictions herein, you may authorize your direct customers (e.g., resellers, integrators, or distributors) to further redistribute the compiled Application containing the Software’s runtime files (DLLs) to End Users, provided that:
 
-4.14. If the Software provided to you is an upgrade or revised version of Software previously provided to you under this Agreement or a predecessor agreement, you may not loan, rent, lease, or otherwise transfer the original non-upgraded Software to another user or on separate computer.
+- The Software remains strictly embedded within the compiled Application.
+- Your customers do not extract, unbundle, or repackage the Software for separate distribution or development purposes.
+- Your customers are bound by a prohibition against reverse engineering and extracting the Software similar to the terms of this Agreement.
 
-4.15. You cannot use our name, logo or trademarks to market your Applications.
+  4.14. If the Software provided to you is an upgrade or revised version of Software previously provided to you under this Agreement or a predecessor agreement, you may not loan, rent, lease, or otherwise transfer the original non-upgraded Software to another user or on separate computer.
 
-4.16. If you have purchased a Source License, you only can modify the source.
+  4.15. You cannot use our name, logo or trademarks to market your Applications.
 
-4.17. If you have purchased a Source License, you should obfuscate or encrypt the assembly the code is used in, so that the source cannot be obviously reverse engineered.
+  4.16. If you have purchased a Source License, you only can modify the source.
+
+  4.17. If you have purchased a Source License, you should obfuscate or encrypt the assembly the code is used in, so that the source cannot be obviously reverse engineered.
 
 ## 5. UPDATES AND TECHNICAL SUPPORT OF SOFTWARE
 
-5.1. Each acquired License includes 1 Year of free maintenance subscription for all updates, new versions and technical support service for the Software, starting from the purchase date of License.
+5.1. The maintenance subscription and technical support terms depend on the specific License acquired, effective from the purchase date:
 
-5.2. You can renew the maintenance subscription for the next year by buying the "1 year maintenance subscription" product.
+- Standard License: Includes one (1) year of maintenance for all updates, new versions, and standard technical support service.
 
-5.3. You will receive all new versions and updates for the Software during the activity period of your License subscription.
+- Pro and Source Licenses: Include three (3) years of maintenance for all updates and new versions. These Licenses also grant access to Priority Support (average response under 24 business hours) and up to two (2) hours of remote assistance.
 
-5.4. You will receive priority technical support service for the Software during the activity period of your License subscription.
+  5.2. You can renew the maintenance subscription for the next year by buying the "1 year maintenance subscription" product.
 
-5.5. We are supporting only the most current version of the Software.
+  5.3. You will receive all new versions and updates for the Software during the activity period of your License subscription.
 
-5.6. Technical support service is provided via the website contact form and then by email.
+  5.4. You will receive priority technical support service for the Software during the activity period of your License subscription.
 
-5.7. For receiving technical support service you should send us your question via the contact form : https://underautomation.com/contact
+  5.5. We are supporting only the most current version of the Software.
+
+  5.6. Technical support service is provided via the website contact form and then by email.
+
+  5.7. For receiving technical support service you should send us your question via the contact form : https://underautomation.com/contact
 
 ## 6. LICENSE TERMINATION
 
@@ -141,7 +147,7 @@ IN NO EVENT SHALL UNDERAUTOMATION BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIREC
 
 ## 10. COPYRIGHT NOTICE.
 
-Copyright (C) 2019-2020 UnderAutomation All rights reserved.
+Copyright (C) 2026 UnderAutomation All rights reserved.
 Any rights not expressly granted herein are reserved.
 
 ## 11. CHANGES TO THIS AGREEMENT
