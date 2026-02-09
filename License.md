@@ -87,7 +87,7 @@ License Types: There are 3 types of Licenses issued for the Software:
 
 4.12. You cannot transfer or assign this Agreement or your License to any third party.
 
-4.13. Redistribution by Customers (OEM Rights). Notwithstanding the restrictions herein, you may authorize your direct customers (e.g., resellers, integrators, or distributors) to further redistribute the compiled Application containing the Software’s runtime files (DLLs) to End Users, provided that:
+4.13. Redistribution by Customers (OEM Rights). Notwithstanding the restrictions herein, you may authorize your direct customers (e.g., resellers, integrators, or distributors) to further redistribute the compiled Application containing the Software's runtime files (DLLs) to End Users, provided that:
 
 - The Software remains strictly embedded within the compiled Application.
 - Your customers do not extract, unbundle, or repackage the Software for separate distribution or development purposes.
