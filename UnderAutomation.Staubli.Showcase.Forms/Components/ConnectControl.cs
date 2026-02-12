@@ -1,5 +1,6 @@
 ﻿using UnderAutomation.Staubli;
 using UnderAutomation.Staubli.Common;
+using UnderAutomation.Staubli.License;
 
 public partial class ConnectControl : UserControl, IUserControl
 {
@@ -50,12 +51,20 @@ public partial class ConnectControl : UserControl, IUserControl
         parameters.Soap.Password = txtPassword.Text;
         parameters.Soap.Port = (int)udSoapPort.Value;
 
-        // Connect to the robot
-        _controller.Connect(parameters);
-
         // Store information
         Config.Current.ConnectParameters = parameters;
         Config.Save();
+
+        try
+        {
+            // Connect to the robot
+            _controller.Connect(parameters);
+        }
+        catch (InvalidLicenseException)
+        {
+            MessageBox.Show("Your licence is invalid. Please obtain a Trial Licence or enter the licence key you receive after purchasing the SDK", "License error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MainForm.Instance.SelectNode<LicenseControl>();
+        }
     }
 
     private void btnDisconnect_Click(object sender, EventArgs e)

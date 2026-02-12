@@ -10,7 +10,19 @@ public partial class MotionControl : UserControl, IUserControl
         _controller = robot;
         InitializeComponent();
 
-        gridMDesc.SelectedObject = new MotionDesc() { Tool = new Frame(), Frame = new Frame(), Config = new UnderAutomation.Staubli.Soap.Data.Config() { AnthroConfig = new AnthroConfig() } };
+        gridMDesc.SelectedObject = new MotionDesc()
+        {
+            Tool = new Frame(),
+            Frame = new Frame(),
+            Config = new UnderAutomation.Staubli.Soap.Data.Config() { AnthroConfig = new AnthroConfig() },
+            Velocity = 10,
+            Acceleration = 100,
+            Deceleration = 100,
+            TranslationVelocity = 99999,
+            RotationVelocity = 99999,
+            Frequency = 100
+        };
+
         gridMDesc.ExpandAllGridItems();
 
         gridJoint.SelectedObject = new double[6];

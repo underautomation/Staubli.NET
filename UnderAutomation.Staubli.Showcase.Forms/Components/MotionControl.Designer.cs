@@ -77,7 +77,7 @@
         // 
         // btnMoveJC
         // 
-        btnMoveJC.Location = new Point(245, 422);
+        btnMoveJC.Location = new Point(392, 422);
         btnMoveJC.Name = "btnMoveJC";
         btnMoveJC.Size = new Size(75, 23);
         btnMoveJC.TabIndex = 2;
@@ -92,7 +92,7 @@
         gridMDesc.Location = new Point(40, 200);
         gridMDesc.Name = "gridMDesc";
         gridMDesc.PropertySort = PropertySort.NoSort;
-        gridMDesc.Size = new Size(156, 340);
+        gridMDesc.Size = new Size(292, 340);
         gridMDesc.TabIndex = 8;
         gridMDesc.ToolbarVisible = false;
         // 
@@ -101,14 +101,14 @@
         label2.AutoSize = true;
         label2.Location = new Point(40, 182);
         label2.Name = "label2";
-        label2.Size = new Size(114, 15);
+        label2.Size = new Size(237, 15);
         label2.TabIndex = 1;
-        label2.Text = "Motion description :";
+        label2.Text = "Motion description (SRS mdesc equivalent):";
         // 
         // gridFrame
         // 
         gridFrame.HelpVisible = false;
-        gridFrame.Location = new Point(245, 134);
+        gridFrame.Location = new Point(392, 134);
         gridFrame.Name = "gridFrame";
         gridFrame.PropertySort = PropertySort.NoSort;
         gridFrame.Size = new Size(156, 282);
@@ -118,7 +118,7 @@
         // label3
         // 
         label3.AutoSize = true;
-        label3.Location = new Point(245, 116);
+        label3.Location = new Point(392, 116);
         label3.Name = "label3";
         label3.Size = new Size(142, 15);
         label3.TabIndex = 1;
@@ -127,16 +127,16 @@
         // label4
         // 
         label4.AutoSize = true;
-        label4.Location = new Point(450, 116);
+        label4.Location = new Point(597, 116);
         label4.Name = "label4";
-        label4.Size = new Size(119, 15);
+        label4.Size = new Size(165, 15);
         label4.TabIndex = 1;
-        label4.Text = "Target joint position :";
+        label4.Text = "Target joint position (radians):";
         // 
         // gridJoint
         // 
         gridJoint.HelpVisible = false;
-        gridJoint.Location = new Point(450, 134);
+        gridJoint.Location = new Point(597, 134);
         gridJoint.Name = "gridJoint";
         gridJoint.PropertySort = PropertySort.NoSort;
         gridJoint.Size = new Size(156, 282);
@@ -145,7 +145,7 @@
         // 
         // btnMoveL
         // 
-        btnMoveL.Location = new Point(326, 422);
+        btnMoveL.Location = new Point(473, 422);
         btnMoveL.Name = "btnMoveL";
         btnMoveL.Size = new Size(75, 23);
         btnMoveL.TabIndex = 2;
@@ -155,7 +155,7 @@
         // 
         // btnMoveJJ
         // 
-        btnMoveJJ.Location = new Point(485, 422);
+        btnMoveJJ.Location = new Point(632, 422);
         btnMoveJJ.Name = "btnMoveJJ";
         btnMoveJJ.Size = new Size(75, 23);
         btnMoveJJ.TabIndex = 2;
@@ -191,7 +191,7 @@
         // lblMoveResult
         // 
         lblMoveResult.AutoSize = true;
-        lblMoveResult.Location = new Point(245, 461);
+        lblMoveResult.Location = new Point(392, 461);
         lblMoveResult.Name = "lblMoveResult";
         lblMoveResult.Size = new Size(16, 15);
         lblMoveResult.TabIndex = 1;
