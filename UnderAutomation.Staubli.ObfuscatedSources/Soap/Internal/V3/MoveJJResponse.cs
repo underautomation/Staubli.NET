@@ -21,6 +21,13 @@ namespace Soap.Internal.V3 {
 		}
 
 
+		public override string ToString()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
 		public int Id { get; set; }
 
 

@@ -67,6 +67,11 @@
             Throw a InvalidLicenseException if the license is not valid
             </summary>
         </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.IsLicensed">
+            <summary>
+            True if the license state is Licensed, Trial or ExtraTrial ; false otherwise
+            </summary>
+        </member>
         <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseKey">
             <summary>
             The license key supplied by UnderAutomation (null for trial period)
@@ -268,6 +273,71 @@
         <member name="M:UnderAutomation.Staubli.Soap.Data.Frame.#ctor">
             <summary>
             Default constructor.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Tool">
+            <summary>
+            Defines the pose of the robot's tool center point (TCP) in flange, including both position and orientation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Frame">
+            <summary>
+            Defines the frame in which the tool position is located, including both position and orientation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.AbsRel">
+            <summary>
+            Specifies whether the motion is defined in absolute or relative terms.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Config">
+            <summary>
+            Contains additional configuration parameters specific to the robot type, such as anthropomorphic, SCARA, or VRBX configurations.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.BlendType">
+            <summary>
+            Specifies the type of blending to be applied when transitioning between motion segments.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.DistanceBlendPrevious">
+            <summary>
+            In the joint and Cartesian blending modes, the distance between the target point where blending begins and the next point, in millimeters or inches, depending on the length unit used in the application.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.DistanceBlendNext">
+            <summary>
+            In joint and Cartesian blending modes, the distance between the target point where blending ends and the next point, in millimeters or inches, depending on the length unit of the application.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Velocity">
+            <summary>
+            Maximum allowable joint speed, as a percentage of the robot's nominal speed.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Acceleration">
+            <summary>
+            Maximum allowed joint acceleration, as a percentage of the robot's nominal acceleration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Deceleration">
+            <summary>
+            Maximum allowed joint deceleration, as a percentage of the robot's nominal deceleration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.TranslationVelocity">
+            <summary>
+            Maximum allowed feed rate of the tool center, in mm/s or inches/s depending on the length unit of the application.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.RotationVelocity">
+            <summary>
+            Maximum permitted tool rotation speed, in degrees per second.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Frequency">
+            <summary>
+            Frequency of motion in Hz.
             </summary>
         </member>
         <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.Success">

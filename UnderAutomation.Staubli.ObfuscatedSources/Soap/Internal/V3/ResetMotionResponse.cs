@@ -9,9 +9,6 @@ namespace Soap.Internal.V3 {
 	public class ResetMotionResponse {
 
 
-		public MotionReturnCode motRet;
-
-
 		public ResetMotionResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...
@@ -22,5 +19,15 @@ namespace Soap.Internal.V3 {
 		{
 			// Source is hidden, a Source licence is needed to access internal code...
 		}
+
+
+		public override string ToString()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public MotionReturnCode ReturnCode { get; set; }
 	}
 }
