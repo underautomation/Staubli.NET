@@ -43,6 +43,9 @@
         udRobot = new NumericUpDown();
         lblPowerResult = new Label();
         lblMoveResult = new Label();
+        btnStopMotion = new Button();
+        btnResetMotion = new Button();
+        btnRestartMotion = new Button();
         ((System.ComponentModel.ISupportInitialize)udRobot).BeginInit();
         SuspendLayout();
         // 
@@ -197,10 +200,43 @@
         lblMoveResult.TabIndex = 1;
         lblMoveResult.Text = "...";
         // 
+        // btnStopMotion
+        // 
+        btnStopMotion.Location = new Point(392, 500);
+        btnStopMotion.Name = "btnStopMotion";
+        btnStopMotion.Size = new Size(116, 23);
+        btnStopMotion.TabIndex = 11;
+        btnStopMotion.Text = "Stop Motion";
+        btnStopMotion.UseVisualStyleBackColor = true;
+        btnStopMotion.Click += btnStopMotion_Click;
+        // 
+        // btnResetMotion
+        // 
+        btnResetMotion.Location = new Point(514, 500);
+        btnResetMotion.Name = "btnResetMotion";
+        btnResetMotion.Size = new Size(98, 23);
+        btnResetMotion.TabIndex = 11;
+        btnResetMotion.Text = "Reset Motion";
+        btnResetMotion.UseVisualStyleBackColor = true;
+        btnResetMotion.Click += btnResetMotion_Click;
+        // 
+        // btnRestartMotion
+        // 
+        btnRestartMotion.Location = new Point(618, 500);
+        btnRestartMotion.Name = "btnRestartMotion";
+        btnRestartMotion.Size = new Size(98, 23);
+        btnRestartMotion.TabIndex = 11;
+        btnRestartMotion.Text = "Restart Motion";
+        btnRestartMotion.UseVisualStyleBackColor = true;
+        btnRestartMotion.Click += btnRestartMotion_Click;
+        // 
         // MotionControl
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
+        Controls.Add(btnRestartMotion);
+        Controls.Add(btnResetMotion);
+        Controls.Add(btnStopMotion);
         Controls.Add(label5);
         Controls.Add(udRobot);
         Controls.Add(gridJoint);
@@ -243,4 +279,7 @@
     private NumericUpDown udRobot;
     private Label lblPowerResult;
     private Label lblMoveResult;
+    private Button btnStopMotion;
+    private Button btnResetMotion;
+    private Button btnRestartMotion;
 }

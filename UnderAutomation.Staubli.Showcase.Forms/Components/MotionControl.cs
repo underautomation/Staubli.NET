@@ -83,4 +83,19 @@ public partial class MotionControl : UserControl, IUserControl
         var result = _controller.Soap.MoveJJ((int)udRobot.Value, gridJoint.SelectedObject as double[], gridMDesc.SelectedObject as MotionDesc);
         SetLblMoveResult(result);
     }
+
+    private void btnStopMotion_Click(object sender, EventArgs e)
+    {
+        var result = _controller.Soap.StopMotion();
+    }
+
+    private void btnResetMotion_Click(object sender, EventArgs e)
+    {
+        var result = _controller.Soap.ResetMotion();
+    }
+
+    private void btnRestartMotion_Click(object sender, EventArgs e)
+    {
+        var result = _controller.Soap.RestartMotion();
+    }
 }
