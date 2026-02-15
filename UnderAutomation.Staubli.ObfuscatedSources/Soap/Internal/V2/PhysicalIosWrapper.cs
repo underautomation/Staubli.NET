@@ -5,7 +5,9 @@
 using Soap.Data;
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// Wrapper for the array of physical I/Os.
+	/// </summary>
 	public class PhysicalIosWrapper {
 
 
@@ -14,7 +16,9 @@ namespace Soap.Internal.V2 {
 			// Source is hidden, a Source licence is needed to access internal code...
 		}
 
-
+		/// <summary>
+		/// Array of physical I/Os.
+		/// </summary>
 		public PhysicalIo[] PhysicalIos { get; set; }
 	}
 }

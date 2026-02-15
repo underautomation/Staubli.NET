@@ -4,16 +4,24 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Blend mode used during motion transitions between segments.
+	/// </summary>
 	public enum BlendType {
 
-
+		/// <summary>
+		/// No blending; the robot stops at each target point.
+		/// </summary>
 		BlendOff = 0,
 
-
+		/// <summary>
+		/// Joint-space blending between motion segments.
+		/// </summary>
 		BlendJoint = 1,
 
-
+		/// <summary>
+		/// Cartesian-space blending between motion segments.
+		/// </summary>
 		BlendCartesian = 2,
 	}
 }

@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response for the stop and unload all operation.
+	/// </summary>
 	public class StopAndUnloadAllResponse {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public StopAndUnloadAllResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

@@ -4,22 +4,34 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Length of the third axis of the robot.
+	/// </summary>
 	public enum LengthAxis3 {
 
-
+		/// <summary>
+		/// Invalid or unknown length.
+		/// </summary>
 		Invalid = 0,
 
-
+		/// <summary>
+		/// 100 mm length.
+		/// </summary>
 		L100 = 1,
 
-
+		/// <summary>
+		/// 200 mm length.
+		/// </summary>
 		L200 = 2,
 
-
+		/// <summary>
+		/// 400 mm length.
+		/// </summary>
 		L400 = 3,
 
-
+		/// <summary>
+		/// 600 mm length.
+		/// </summary>
 		L600 = 4,
 	}
 }

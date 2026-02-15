@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response for the task kill operation.
+	/// </summary>
 	public class TaskKillResponse {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public TaskKillResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

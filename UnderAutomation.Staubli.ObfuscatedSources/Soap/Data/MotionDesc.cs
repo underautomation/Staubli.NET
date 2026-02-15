@@ -4,13 +4,38 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Describes the parameters of a robot motion, including tool, frame, velocity, acceleration, blending and configuration.
+	/// </summary>
 	public class MotionDesc {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Data.MotionDesc" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public MotionDesc()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...
+		}
+
+
+		public override string ToString()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override bool Equals(object obj)
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override int GetHashCode()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
 		}
 
 		/// <summary>

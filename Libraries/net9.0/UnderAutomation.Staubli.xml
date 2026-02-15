@@ -6,7 +6,7 @@
     <members>
         <member name="T:UnderAutomation.Staubli.Common.SoapConnectParameters">
             <summary>
-            
+            SOAP connection parameters for communicating with the Staubli robot controller.
             </summary>
         </member>
         <member name="F:UnderAutomation.Staubli.Common.SoapConnectParameters.DEFAULT_PORT">
@@ -48,6 +48,15 @@
             <summary>
             Soap connection parameters
             </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.ConnectionParameters.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.ConnectionParameters.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.ConnectionParameters.GetHashCode">
+            <inheritdoc />
         </member>
         <member name="T:UnderAutomation.Staubli.License.LicenseInfo">
             <summary>
@@ -182,6 +191,85 @@
             The license that causes this exception
             </summary>
         </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig">
+            <summary>
+            Configuration for above/below joint orientation.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig.Same">
+            <summary>
+            Keep the same configuration as the current one.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig.Above">
+            <summary>
+            Above configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig.Below">
+            <summary>
+            Below configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig.Free">
+            <summary>
+            Free configuration (no constraint).
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.AnthroConfig">
+            <summary>
+            Configuration for an anthropomorphic robot (shoulder, elbow, wrist).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.AnthroConfig.Shoulder">
+            <summary>
+            Shoulder configuration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.AnthroConfig.Elbow">
+            <summary>
+            Elbow configuration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.AnthroConfig.Wrist">
+            <summary>
+            Wrist configuration.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.AnthroConfig.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.AnthroConfig"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.AnthroConfig.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.AnthroConfig.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.AnthroConfig.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.BlendType">
+            <summary>
+            Blend mode used during motion transitions between segments.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.BlendType.BlendOff">
+            <summary>
+            No blending; the robot stops at each target point.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.BlendType.BlendJoint">
+            <summary>
+            Joint-space blending between motion segments.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.BlendType.BlendCartesian">
+            <summary>
+            Cartesian-space blending between motion segments.
+            </summary>
+        </member>
         <member name="T:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition">
             <summary>
             Represents the joint positions and the Cartesian position of a robot end effector.
@@ -195,6 +283,246 @@
         <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition.CartesianPosition">
             <summary>
             The Cartesian position of the robot end effector.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianJointPosition.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.CartesianPosition">
+            <summary>
+            Represents a Cartesian position with X, Y, Z translation and Rx, Ry, Rz rotation components.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianPosition.X">
+            <summary>
+            X translation component (m).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianPosition.Y">
+            <summary>
+            Y translation component (m).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianPosition.Z">
+            <summary>
+            Z translation component (m).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianPosition.Rx">
+            <summary>
+            Rotation around the X axis (radians).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianPosition.Ry">
+            <summary>
+            Rotation around the Y axis (radians).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.CartesianPosition.Rz">
+            <summary>
+            Rotation around the Z axis (radians).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianPosition.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.CartesianPosition"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianPosition.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianPosition.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianPosition.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.Config">
+            <summary>
+            Robot configuration containing kinematic-specific settings.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Config.AnthroConfig">
+            <summary>
+            Anthropomorphic robot configuration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Config.ScaraConfig">
+            <summary>
+            SCARA robot configuration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Config.VrbxConfig">
+            <summary>
+            VRBX robot configuration.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Config.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Config"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Config.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Config.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Config.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ControllerTask">
+            <summary>
+            Represents a task running on the controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.Name">
+            <summary>
+            Name of the task.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.State">
+            <summary>
+            Current execution state of the task.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.Priority">
+            <summary>
+            Priority level of the task.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.CreatedBy">
+            <summary>
+            Name of the entity that created the task.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.RuntimeError">
+            <summary>
+            Runtime error code (0 if no error).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.RuntimeErrorDescription">
+            <summary>
+            Human-readable description of the runtime error.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ControllerTask.ProgramLine">
+            <summary>
+            Current program line being executed by the task.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ControllerTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ControllerTask"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ControllerTask.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ControllerTask.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ControllerTask.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ControllerTaskState">
+            <summary>
+            Execution state of a controller task.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ControllerTaskState.Idle">
+            <summary>
+            Task is idle and not executing.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ControllerTaskState.Transition">
+            <summary>
+            Task is transitioning between states.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ControllerTaskState.Running">
+            <summary>
+            Task is currently running.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ControllerTaskState.Stepping">
+            <summary>
+            Task is executing step by step.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ControllerTaskState.Stopped">
+            <summary>
+            Task is stopped.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.DhParameters">
+            <summary>
+            Denavit-Hartenberg parameters for a single robot joint.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.DhParameters.Theta">
+            <summary>
+            Joint angle theta (radians).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.DhParameters.D">
+            <summary>
+            Link offset d (m).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.DhParameters.A">
+            <summary>
+            Link length a (m).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.DhParameters.Alpha">
+            <summary>
+            Link twist alpha (radians).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.DhParameters.Beta">
+            <summary>
+            Joint twist beta (radians).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.DhParameters.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.DhParameters"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.DhParameters.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.DhParameters.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.DhParameters.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.DiameterAxis3">
+            <summary>
+            Diameter of the third axis of the robot.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.DiameterAxis3.Invalid">
+            <summary>
+            Invalid or unknown diameter.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.DiameterAxis3.D20">
+            <summary>
+            20 mm diameter.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.DiameterAxis3.D25">
+            <summary>
+            25 mm diameter.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Data.Frame">
@@ -275,6 +603,159 @@
             Default constructor.
             </summary>
         </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Frame.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Frame.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Frame.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.IForwardKinematics">
+            <summary>
+            Represents the result of a forward kinematics computation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.IForwardKinematics.Position">
+            <summary>
+            Cartesian position resulting from the forward kinematics computation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.IForwardKinematics.Config">
+            <summary>
+            Robot configuration associated with the computed position.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.IMoveResult">
+            <summary>
+            Represents the result of a robot motion command.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.IMoveResult.Id">
+            <summary>
+            Identifier of the motion command.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.IMoveResult.ReturnCode">
+            <summary>
+            Return code indicating the outcome of the motion command.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.IReverseKinematics">
+            <summary>
+            Represents the result of a reverse (inverse) kinematics computation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.IReverseKinematics.Joint">
+            <summary>
+            Joint angles resulting from the reverse kinematics computation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.IReverseKinematics.Result">
+            <summary>
+            Result code indicating the outcome of the reverse kinematics computation.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.JointRange">
+            <summary>
+            Minimum and maximum range of each robot joint (radians).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.JointRange.Min">
+            <summary>
+            Minimum values for each joint (radians).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.JointRange.Max">
+            <summary>
+            Maximum values for each joint (radians).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.JointRange.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.JointRange"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.JointRange.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.JointRange.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.JointRange.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.Kinematic">
+            <summary>
+            Robot kinematic type.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.Kinematic.Invalid">
+            <summary>
+            Invalid or unknown kinematic type.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.Kinematic.Anthropomorph6">
+            <summary>
+            6-axis anthropomorphic robot.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.Kinematic.Anthrioparallel6">
+            <summary>
+            6-axis anthropomorphic parallel robot.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.Kinematic.Anthropomorph5">
+            <summary>
+            5-axis anthropomorphic robot.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.Kinematic.Scara">
+            <summary>
+            SCARA robot.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.Kinematic.Eisenmann">
+            <summary>
+            Eisenmann kinematic type.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.LengthAxis3">
+            <summary>
+            Length of the third axis of the robot.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.LengthAxis3.Invalid">
+            <summary>
+            Invalid or unknown length.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.LengthAxis3.L100">
+            <summary>
+            100 mm length.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.LengthAxis3.L200">
+            <summary>
+            200 mm length.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.LengthAxis3.L400">
+            <summary>
+            400 mm length.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.LengthAxis3.L600">
+            <summary>
+            600 mm length.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.MotionDesc">
+            <summary>
+            Describes the parameters of a robot motion, including tool, frame, velocity, acceleration, blending and configuration.
+            </summary>
+        </member>
         <member name="P:UnderAutomation.Staubli.Soap.Data.MotionDesc.Tool">
             <summary>
             Defines the pose of the robot's tool center point (TCP) in flange, including both position and orientation.
@@ -340,10 +821,176 @@
             Frequency of motion in Hz.
             </summary>
         </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.MotionDesc.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.MotionDesc"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.MotionDesc.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.MotionDesc.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.MotionDesc.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.MotionReturnCode">
+            <summary>
+            Return code for robot motion commands.
+            </summary>
+        </member>
         <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.Success">
             <summary>
             Success, no error occurred.
             </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.NotReady">
+            <summary>
+            The robot is not ready to execute motion.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.ParameterError">
+            <summary>
+            Invalid parameter provided to the motion command.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.MisuseError">
+            <summary>
+            Motion command misuse error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MotionReturnCode.UnexpectedError">
+            <summary>
+            An unexpected error occurred during motion.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.MountType">
+            <summary>
+            Robot mounting type.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MountType.Invalid">
+            <summary>
+            Invalid or unknown mount type.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MountType.Floor">
+            <summary>
+            Robot is floor-mounted.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MountType.Ceiling">
+            <summary>
+            Robot is ceiling-mounted.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MountType.Wall">
+            <summary>
+            Robot is wall-mounted.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.MoveType">
+            <summary>
+            Specifies whether the motion is absolute or relative.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MoveType.Absolute">
+            <summary>
+            Absolute motion in the reference frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.MoveType.Relative">
+            <summary>
+            Relative motion from the current position.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.Parameter">
+            <summary>
+            Key-value parameter from the controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Parameter.Key">
+            <summary>
+            Parameter key identifier.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Parameter.Name">
+            <summary>
+            Display name of the parameter.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Parameter.Value">
+            <summary>
+            Value of the parameter.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Parameter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Parameter"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Parameter.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Parameter.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Parameter.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute">
+            <summary>
+            Attributes for an analog I/O, including linear conversion coefficients.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.CoefficientA">
+            <summary>
+            Linear coefficient A (slope) for analog conversion.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.CoefficientB">
+            <summary>
+            Linear coefficient B (offset) for analog conversion.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute">
+            <summary>
+            Attributes for a digital I/O.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.Inverted">
+            <summary>
+            Indicates whether the digital I/O logic is inverted.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.GetHashCode">
+            <inheritdoc />
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalIo">
             <summary>
@@ -370,6 +1017,447 @@
             Indicates whether the physical I/O is lockable.
             </summary>
         </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIo.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIo.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIo.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute">
+            <summary>
+            Physical I/O attribute containing either analog or digital specific attributes.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.AioAttribute">
+            <summary>
+            Analog I/O specific attributes (null if digital).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.DioAttribute">
+            <summary>
+            Digital I/O specific attributes (null if analog).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoEnumState">
+            <summary>
+            Definition state of a physical I/O.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PhysicalIoEnumState.Defined">
+            <summary>
+            The I/O is defined and available.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PhysicalIoEnumState.Undefined">
+            <summary>
+            The I/O is not defined.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PhysicalIoEnumState.InvalidName">
+            <summary>
+            The I/O name is invalid.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoState">
+            <summary>
+            Current state and value of a physical I/O.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.State">
+            <summary>
+            Definition state of the I/O.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.Locked">
+            <summary>
+            Indicates whether the I/O is locked.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.Simulated">
+            <summary>
+            Indicates whether the I/O is in simulation mode.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.Value">
+            <summary>
+            Current numeric value of the I/O.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.Attribute">
+            <summary>
+            I/O type-specific attributes (analog or digital).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoState"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse">
+            <summary>
+            Result of a physical I/O write operation.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.Success">
+            <summary>
+            Indicates whether the write operation succeeded.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.Found">
+            <summary>
+            Indicates whether the specified I/O was found.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PositiveNegativeConfig">
+            <summary>
+            Positive/negative configuration for a robot joint.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PositiveNegativeConfig.Same">
+            <summary>
+            Keep the same configuration as the current one.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PositiveNegativeConfig.Positive">
+            <summary>
+            Positive configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PositiveNegativeConfig.Negative">
+            <summary>
+            Negative configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PositiveNegativeConfig.Free">
+            <summary>
+            Free configuration (no constraint).
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.PowerReturnCode">
+            <summary>
+            Return code for robot power commands.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PowerReturnCode.Success">
+            <summary>
+            Success, no error occurred.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PowerReturnCode.RobotNotStopped">
+            <summary>
+            Cannot change power while the robot is not stopped.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PowerReturnCode.EnableTimeout">
+            <summary>
+            Timeout while enabling power.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PowerReturnCode.DisableTimeout">
+            <summary>
+            Timeout while disabling power.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.PowerReturnCode.OnlyInRemoteMode">
+            <summary>
+            Power can only be changed in remote mode.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ProgramLine">
+            <summary>
+            Represents a line of a VAL3 program being executed on the controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ProgramLine.ApplicationName">
+            <summary>
+            Name of the application containing the program.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ProgramLine.ProgramName">
+            <summary>
+            Name of the program.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ProgramLine.LineNumber">
+            <summary>
+            Line number currently being executed.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ProgramLine.LineContent">
+            <summary>
+            Content of the line being executed.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ProgramLine.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ProgramLine"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ProgramLine.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ProgramLine.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ProgramLine.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ReversingResult">
+            <summary>
+            Result code for reverse kinematics computation.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.Success">
+            <summary>
+            Reverse kinematics succeeded.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.NoConvergence">
+            <summary>
+            The algorithm did not converge to a solution.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.JointOutOfRange">
+            <summary>
+            The computed joint position is out of range.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.OutOfWorkspace">
+            <summary>
+            The target is outside the robot workspace.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.InvalidConfiguration">
+            <summary>
+            The specified configuration is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.InvalidOrientation">
+            <summary>
+            The specified orientation is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.UnsupportedKinematics">
+            <summary>
+            The robot kinematics type is not supported.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.UnconstrainedFrame">
+            <summary>
+            The frame is unconstrained.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ReversingResult.InvalidErrorCode">
+            <summary>
+            Invalid error code returned.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.Robot">
+            <summary>
+            Represents a robot managed by the controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Robot.Kinematic">
+            <summary>
+            Kinematic type of the robot.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Robot.Arm">
+            <summary>
+            Arm model identifier.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Robot.Tuning">
+            <summary>
+            Tuning identifier.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Robot.MountType">
+            <summary>
+            Mounting type of the robot (floor, ceiling, wall).
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Robot.LengthAxis3">
+            <summary>
+            Length of the third axis.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.Robot.DiameterAxis3">
+            <summary>
+            Diameter of the third axis.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Robot.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Robot"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Robot.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Robot.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.Robot.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ScaraConfig">
+            <summary>
+            Configuration for a SCARA robot.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ScaraConfig.Shoulder">
+            <summary>
+            Shoulder configuration.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ScaraConfig.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ScaraConfig"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ScaraConfig.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ScaraConfig.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ScaraConfig.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ShoulderConfig">
+            <summary>
+            Shoulder configuration for the robot arm.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ShoulderConfig.Same">
+            <summary>
+            Keep the same configuration as the current one.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ShoulderConfig.Lefty">
+            <summary>
+            Left-handed configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ShoulderConfig.Righty">
+            <summary>
+            Right-handed configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Data.ShoulderConfig.Free">
+            <summary>
+            Free configuration (no constraint).
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.ValApplication">
+            <summary>
+            Represents a VAL3 application on the controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ValApplication.Name">
+            <summary>
+            Name of the application.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ValApplication.Loaded">
+            <summary>
+            Indicates whether the application is loaded in memory.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ValApplication.IsCrypted">
+            <summary>
+            Indicates whether the application is encrypted.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.ValApplication.IsRunning">
+            <summary>
+            Indicates whether the application is currently running.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ValApplication.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ValApplication.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.ValApplication.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Data.VrbxConfig">
+            <summary>
+            Configuration for a VRBX-type robot.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.VrbxConfig.Joint1">
+            <summary>
+            Joint 1 above/below configuration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.VrbxConfig.Joint3">
+            <summary>
+            Joint 3 positive/negative configuration.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Data.VrbxConfig.Joint5">
+            <summary>
+            Joint 5 positive/negative configuration.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.VrbxConfig.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.VrbxConfig"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.VrbxConfig.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.VrbxConfig.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Data.VrbxConfig.GetHashCode">
+            <inheritdoc />
+        </member>
         <member name="T:UnderAutomation.Staubli.Soap.Errors.CustomSoapException">
             <summary>
             Custom exception class for handling SOAP errors with specific error codes and descriptions.
@@ -393,6 +1481,346 @@
         <member name="P:UnderAutomation.Staubli.Soap.Errors.CustomSoapException.Message">
             <summary>
             Gets the error message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode">
+            <summary>
+            Error codes returned by the SOAP service.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.Unknown">
+            <summary>
+            Unknown or unrecognized error code.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.InvalidCredentials">
+            <summary>
+            The provided credentials are invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.TaskNotFound">
+            <summary>
+            The specified task was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.MismatchedCode">
+            <summary>
+            Mismatched code error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.ProgramNotFound">
+            <summary>
+            The specified program was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.TaskAlreadyLocked">
+            <summary>
+            The task is already locked by another client.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.SinReturnCodeNok">
+            <summary>
+            SIN return code indicates failure.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.SchedulingModeError">
+            <summary>
+            Scheduling mode error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.ApplicationNotFound">
+            <summary>
+            The specified application was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.StackFrameNotFound">
+            <summary>
+            The specified stack frame was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.ProgramLineNotFound">
+            <summary>
+            The specified program line was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.ReadAccessErrorCode">
+            <summary>
+            Read access error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.SetPosNotSimulCode">
+            <summary>
+            Cannot set position outside simulation mode.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.InvalidSessionIdCode">
+            <summary>
+            The session ID is invalid or expired.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.WriteAccessErrorCode">
+            <summary>
+            Write access error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.CannotStartApplication">
+            <summary>
+            Cannot start the application.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.ClientAlreadyConnected">
+            <summary>
+            A client is already connected.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.IoWriteAccessErrorCode">
+            <summary>
+            I/O write access error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.ClientCommunicationError">
+            <summary>
+            Client communication error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.IoWriteAccessErrorValidation">
+            <summary>
+            I/O write access validation error.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.IoWriteAccessErrorWorkingMode">
+            <summary>
+            I/O write access error due to working mode.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.SoapErrorCode.InvalidRobotIdCode">
+            <summary>
+            The specified robot ID is invalid.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Errors.StartApplicationError">
+            <summary>
+            Error codes that can occur when starting an application on the controller.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.MemoryFull">
+            <summary>
+            Not enough memory to start the application.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.LibraryBusy">
+            <summary>
+            The library is currently busy.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.LibraryInvalidZip">
+            <summary>
+            The library ZIP file is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.DataNotFound">
+            <summary>
+            The required data was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.DataBusy">
+            <summary>
+            The data is currently busy.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.DataInvalidName">
+            <summary>
+            The data name is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.DataAlreadyExists">
+            <summary>
+            The data already exists.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.DataInvalidSize">
+            <summary>
+            The data size is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.DataNotAnArray">
+            <summary>
+            The data is not an array.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.RoutineInvalidName">
+            <summary>
+            The routine name is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.RoutineAlreadyExists">
+            <summary>
+            The routine already exists.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.RoutineNameTooLong">
+            <summary>
+            The routine name is too long.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.RoutineInvalidParamPosition">
+            <summary>
+            The routine parameter position is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.RoutineNotFound">
+            <summary>
+            The routine was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.RoutineBusy">
+            <summary>
+            The routine is currently busy.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectBusy">
+            <summary>
+            The project is currently busy.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInvalidName">
+            <summary>
+            The project name is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInvalidAlias">
+            <summary>
+            The project alias is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectAliasAlreadyUsed">
+            <summary>
+            The project alias is already in use.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectAlreadyExists">
+            <summary>
+            The project already exists.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectCodeError">
+            <summary>
+            A code error occurred in the project.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectDataError">
+            <summary>
+            A data error occurred in the project.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.StartRoutineNotFound">
+            <summary>
+            The start routine was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInvalidMain">
+            <summary>
+            The project main entry point is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInvalidProject">
+            <summary>
+            The project is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.StopRoutineNotFound">
+            <summary>
+            The stop routine was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInvalidDestructor">
+            <summary>
+            The project destructor is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectDefaultStackTooSmall">
+            <summary>
+            The default stack size is too small.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectAlreadyRunning">
+            <summary>
+            The project is already running.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectAlreadyEnding">
+            <summary>
+            The project is already ending.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectLocked">
+            <summary>
+            The project is locked.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectFileError">
+            <summary>
+            A file error occurred in the project.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectFilemanagerNotFound">
+            <summary>
+            The file manager was not found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectLibraryError">
+            <summary>
+            A library error occurred in the project.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectUnresolvedSymbol">
+            <summary>
+            An unresolved symbol was found in the project.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInconsistantResolvedSymbol">
+            <summary>
+            An inconsistent resolved symbol was found.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInterfaceStillUsed">
+            <summary>
+            An interface is still in use.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectUsedAsStruct">
+            <summary>
+            The project is used as a struct.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInterfaceTaskNotKilled">
+            <summary>
+            An interface task has not been killed.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectInvalidTypename">
+            <summary>
+            The type name is invalid.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectTypenameAlreadyUsed">
+            <summary>
+            The type name is already in use.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectTypeProjectError">
+            <summary>
+            A type project error occurred.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectTypeBusy">
+            <summary>
+            The type is currently busy.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Errors.StartApplicationError.ProjectCircularReference">
+            <summary>
+            A circular reference was detected in the project.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.SoapClientBase">
@@ -658,6 +2086,1098 @@
             Port of the SOAP service (default: 851)
             </summary>
         </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest">
+            <summary>
+            SOAP request to retrieve the controller parameters.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse">
+            <summary>
+            SOAP response containing the controller parameters.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse.#ctor(UnderAutomation.Staubli.Soap.Data.Parameter[])">
+            <summary>
+            Initializes a new instance with the specified parameters.
+            </summary>
+            <param name="out">Array of controller parameters.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse.out">
+            <summary>
+            Array of controller parameters.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest">
+            <summary>
+            SOAP request to retrieve a robot's joint and Cartesian positions.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.CartesianPosition,UnderAutomation.Staubli.Soap.Data.CartesianPosition)">
+            <summary>
+            Initializes a new instance with the specified robot, tool and frame.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="tool">Tool pose in flange frame.</param>
+            <param name="frame">Reference frame for the Cartesian position.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.tool">
+            <summary>
+            Tool pose in flange frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.frame">
+            <summary>
+            Reference frame for the Cartesian position.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse">
+            <summary>
+            SOAP response containing the robot's joint and Cartesian positions.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse.#ctor(System.Double[],UnderAutomation.Staubli.Soap.Data.CartesianPosition)">
+            <summary>
+            Initializes a new instance with the specified joint and Cartesian positions.
+            </summary>
+            <param name="jntPos">Joint positions in radians.</param>
+            <param name="cartPos">Cartesian position of the tool.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse.jntPos">
+            <summary>
+            Joint positions in radians.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse.cartPos">
+            <summary>
+            Cartesian position of the tool.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest">
+            <summary>
+            SOAP request to retrieve a robot's joint positions.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance with the specified robot identifier.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse">
+            <summary>
+            SOAP response containing a robot's joint positions.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse.#ctor(System.Double[])">
+            <summary>
+            Initializes a new instance with the specified joint positions.
+            </summary>
+            <param name="pos">Joint positions in radians.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse.pos">
+            <summary>
+            Joint positions in radians.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest">
+            <summary>
+            SOAP request to retrieve the list of robots managed by the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse">
+            <summary>
+            SOAP response containing the list of robots.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse"/> class.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse.out">
+            <summary>
+            Array of robots managed by the controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest">
+            <summary>
+            SOAP request to log in to the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance with the specified credentials.
+            </summary>
+            <param name="user">Username.</param>
+            <param name="pwd">Password.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest.user">
+            <summary>
+            Username for authentication.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest.pwd">
+            <summary>
+            Password for authentication.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.LoginResponse">
+            <summary>
+            SOAP response containing the session identifier after login.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.LoginResponse.Sid">
+            <summary>
+            Session identifier assigned by the controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest">
+            <summary>
+            SOAP request to log out from the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.LogoutResponse">
+            <summary>
+            SOAP response for the logout operation.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Request">
+            <summary>
+            SOAP request to retrieve all VAL applications from the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Request.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Request"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response">
+            <summary>
+            SOAP response containing the list of VAL applications.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response"/> class.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response.Applications">
+            <summary>
+            Array of VAL applications available on the controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest">
+            <summary>
+            SOAP request to retrieve a robot's joint range limits.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance with the specified robot identifier.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse">
+            <summary>
+            SOAP response containing a robot's joint range limits.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse.#ctor(UnderAutomation.Staubli.Soap.Data.JointRange)">
+            <summary>
+            Initializes a new instance with the specified joint range.
+            </summary>
+            <param name="range">Joint range data.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse.range">
+            <summary>
+            Joint range limits for each axis.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosRequest">
+            <summary>
+            SOAP request to retrieve all physical I/Os from the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosResponse">
+            <summary>
+            SOAP response containing all physical I/Os.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosResponse.Data">
+            <summary>
+            Nested data wrapper for the physical I/Os response.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosResponseData">
+            <summary>
+            Intermediate wrapper for physical I/Os response data.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosResponseData.Data">
+            <summary>
+            Inner data wrapper containing the physical I/Os array.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.PhysicalIosWrapper">
+            <summary>
+            Wrapper for the array of physical I/Os.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V2.PhysicalIosWrapper.PhysicalIos">
+            <summary>
+            Array of physical I/Os.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest">
+            <summary>
+            SOAP request to retrieve a robot's Denavit-Hartenberg parameters.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance with the specified robot identifier.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse">
+            <summary>
+            SOAP response containing the robot's Denavit-Hartenberg parameters.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse.#ctor(UnderAutomation.Staubli.Soap.Data.DhParameters[],System.Double)">
+            <summary>
+            Initializes a new instance with the specified DH parameters.
+            </summary>
+            <param name="dhParametersArray">Array of DH parameters per joint.</param>
+            <param name="lastDParam">Last D parameter value.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse.dhParametersArray">
+            <summary>
+            Array of Denavit-Hartenberg parameters for each joint.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse.lastDParam">
+            <summary>
+            Last D parameter value.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest">
+            <summary>
+            SOAP request to retrieve all tasks from the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse">
+            <summary>
+            SOAP response containing the list of controller tasks.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse"/> class.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse.Tasks">
+            <summary>
+            Array of tasks running on the controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest">
+            <summary>
+            SOAP request to asynchronously load a project on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest.#ctor(System.String)">
+            <summary>
+            Initializes a new instance with the specified application path.
+            </summary>
+            <param name="applicationPath">Path to the project on the controller.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest.applicationPath">
+            <summary>
+            Path to the project on the controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse">
+            <summary>
+            SOAP response for the asynchronous project load operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest">
+            <summary>
+            SOAP request to read the state of specified physical I/Os.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest.#ctor(System.String[],System.Boolean)">
+            <summary>
+            Initializes a new instance with the specified I/O paths and description flag.
+            </summary>
+            <param name="ios">Array of physical I/O paths to read.</param>
+            <param name="xgetDescription">Whether to include I/O descriptions in the response.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest.ios">
+            <summary>
+            Array of physical I/O paths to read.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest.xgetDescription">
+            <summary>
+            Whether to include I/O descriptions in the response.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse">
+            <summary>
+            SOAP response containing the state of physical I/Os.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse.#ctor(UnderAutomation.Staubli.Soap.Data.PhysicalIoState[])">
+            <summary>
+            Initializes a new instance with the specified I/O states.
+            </summary>
+            <param name="state">Array of physical I/O states.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse.state">
+            <summary>
+            Array of physical I/O states.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest">
+            <summary>
+            SOAP request to start a VAL application on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest.#ctor(System.String)">
+            <summary>
+            Initializes a new instance with the specified application path.
+            </summary>
+            <param name="applicationPath">Application path on the controller.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest.applicationPath">
+            <summary>
+            Application path on the controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse">
+            <summary>
+            SOAP response for the start application operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest">
+            <summary>
+            SOAP request to stop and unload all applications on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse">
+            <summary>
+            SOAP response for the stop and unload all operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest">
+            <summary>
+            SOAP request to stop the current application on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse">
+            <summary>
+            SOAP response for the stop application operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest">
+            <summary>
+            SOAP request to kill a task on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance with the specified task name and creator.
+            </summary>
+            <param name="taskName">Name of the task to kill.</param>
+            <param name="createdBy">Creator of the task.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest.taskName">
+            <summary>
+            Name of the task to kill.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest.createdBy">
+            <summary>
+            Creator of the task.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse">
+            <summary>
+            SOAP response for the task kill operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest">
+            <summary>
+            SOAP request to resume a suspended task on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance with the specified task name and creator.
+            </summary>
+            <param name="taskName">Name of the task to resume.</param>
+            <param name="createdBy">Creator of the task.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest.taskName">
+            <summary>
+            Name of the task to resume.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest.createdBy">
+            <summary>
+            Creator of the task.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeResponse">
+            <summary>
+            SOAP response for the task resume operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest">
+            <summary>
+            SOAP request to suspend a task on the controller.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance with the specified task name and creator.
+            </summary>
+            <param name="taskName">Name of the task to suspend.</param>
+            <param name="createdBy">Creator of the task.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest.taskName">
+            <summary>
+            Name of the task to suspend.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest.createdBy">
+            <summary>
+            Creator of the task.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse">
+            <summary>
+            SOAP response for the task suspend operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest">
+            <summary>
+            SOAP request to write values to specified physical I/Os.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest.#ctor(System.String[],System.Double[])">
+            <summary>
+            Initializes a new instance with the specified I/O paths and values.
+            </summary>
+            <param name="ios">Array of physical I/O paths to write.</param>
+            <param name="values">Array of values to write.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest.ios">
+            <summary>
+            Array of physical I/O paths to write.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest.values">
+            <summary>
+            Array of values to write to the I/Os.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse">
+            <summary>
+            SOAP response containing the results of the I/O write operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse"/> class.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse.out">
+            <summary>
+            Array of write responses for each I/O.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest">
+            <summary>
+            SOAP request to compute forward kinematics for a robot.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest.#ctor(System.Int32,System.Double[])">
+            <summary>
+            Initializes a new instance with the specified robot and joint positions.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="joint">Joint positions in radians.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest.joint">
+            <summary>
+            Joint positions in radians.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse">
+            <summary>
+            SOAP response containing the forward kinematics result.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.#ctor(UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Config)">
+            <summary>
+            Initializes a new instance with the specified position and configuration.
+            </summary>
+            <param name="position">Cartesian position.</param>
+            <param name="config">Robot configuration.</param>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.Position">
+            <summary>
+            Cartesian position resulting from forward kinematics.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.Config">
+            <summary>
+            Robot configuration at the computed position.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest">
+            <summary>
+            SOAP request for a circular motion command.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Initializes a new instance with the specified parameters.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="frameB">Intermediate waypoint frame.</param>
+            <param name="frameC">Target frame.</param>
+            <param name="mdesc">Motion description.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.frameB">
+            <summary>
+            Intermediate waypoint frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.frameC">
+            <summary>
+            Target frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.mdesc">
+            <summary>
+            Motion description parameters.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest">
+            <summary>
+            SOAP request for a joint-to-Cartesian motion command.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Initializes a new instance with the specified parameters.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="frame">Target Cartesian frame.</param>
+            <param name="mdesc">Motion description.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.frame">
+            <summary>
+            Target Cartesian frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.mdesc">
+            <summary>
+            Motion description parameters.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest">
+            <summary>
+            SOAP request for a joint-to-joint motion command.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.#ctor(System.Int32,System.Double[],UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Initializes a new instance with the specified parameters.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="joint">Target joint positions in radians.</param>
+            <param name="mdesc">Motion description.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.joint">
+            <summary>
+            Target joint positions in radians.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.mdesc">
+            <summary>
+            Motion description parameters.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse">
+            <summary>
+            SOAP response for a motion command, containing the result code.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.MotionReturnCode)">
+            <summary>
+            Initializes a new instance with the specified motion identifier and return code.
+            </summary>
+            <param name="id">Motion command identifier.</param>
+            <param name="motRet">Motion return code.</param>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.Id">
+            <summary>
+            Motion command identifier.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.ReturnCode">
+            <summary>
+            Return code indicating the outcome of the motion.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest">
+            <summary>
+            SOAP request for a linear motion command.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
+            <summary>
+            Initializes a new instance with the specified parameters.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="frame">Target Cartesian frame.</param>
+            <param name="mdesc">Motion description.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.frame">
+            <summary>
+            Target Cartesian frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.mdesc">
+            <summary>
+            Motion description parameters.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionRequest">
+            <summary>
+            SOAP request to reset the robot motion.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse">
+            <summary>
+            SOAP response for motion control operations (reset, restart, stop).
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse.#ctor(UnderAutomation.Staubli.Soap.Data.MotionReturnCode)">
+            <summary>
+            Initializes a new instance with the specified return code.
+            </summary>
+            <param name="motRet">Motion return code.</param>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse.ReturnCode">
+            <summary>
+            Return code indicating the outcome of the motion operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest">
+            <summary>
+            SOAP request to restart the robot motion.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest"/> class.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest">
+            <summary>
+            SOAP request to compute reverse (inverse) kinematics for a robot.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.#ctor(System.Int32,System.Double[],UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Config,UnderAutomation.Staubli.Soap.Data.JointRange)">
+            <summary>
+            Initializes a new instance with the specified parameters.
+            </summary>
+            <param name="robot">Robot identifier.</param>
+            <param name="jointIn">Initial joint positions in radians.</param>
+            <param name="target">Target Cartesian frame.</param>
+            <param name="config">Robot configuration.</param>
+            <param name="jointRange">Allowed joint range limits.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.robot">
+            <summary>
+            Robot identifier.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.jointIn">
+            <summary>
+            Initial joint positions in radians.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.target">
+            <summary>
+            Target Cartesian frame.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.config">
+            <summary>
+            Robot configuration.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.jointRange">
+            <summary>
+            Allowed joint range limits.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse">
+            <summary>
+            SOAP response containing the reverse kinematics result.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.#ctor(System.Double[],UnderAutomation.Staubli.Soap.Data.ReversingResult)">
+            <summary>
+            Initializes a new instance with the specified joint positions and result.
+            </summary>
+            <param name="jointOut">Computed joint positions in radians.</param>
+            <param name="reversingResult">Result code of the reverse kinematics computation.</param>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.Joint">
+            <summary>
+            Computed joint positions in radians.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.Result">
+            <summary>
+            Result code of the reverse kinematics computation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest">
+            <summary>
+            SOAP request to set the robot power state.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance with the specified power state.
+            </summary>
+            <param name="power">True to power on, false to power off.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest.power">
+            <summary>
+            Desired power state. True to power on, false to power off.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse">
+            <summary>
+            SOAP response for the set power operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse.#ctor(UnderAutomation.Staubli.Soap.Data.PowerReturnCode)">
+            <summary>
+            Initializes a new instance with the specified return code.
+            </summary>
+            <param name="code">Power operation return code.</param>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse.code">
+            <summary>
+            Return code indicating the outcome of the power operation.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.StopMotionRequest">
+            <summary>
+            SOAP request to stop the robot motion.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.StopMotionRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.StopMotionRequest"/> class.
+            </summary>
+        </member>
         <member name="T:UnderAutomation.Staubli.Soap.SoapClient">
             <summary>
             SOAP client for Staubli robots
@@ -713,6 +3233,11 @@
             Check if the robot is connected
             </summary>
         </member>
+        <member name="P:UnderAutomation.Staubli.StaubliController.Soap">
+            <summary>
+            Internal SOAP client used to communicate with the robot controller.
+            </summary>
+        </member>
         <member name="M:UnderAutomation.Staubli.StaubliController.RegisterLicense(System.String,System.String)">
             <summary>
             If you have a license And a key, please call this static method to register the product And exit the trial period
@@ -725,6 +3250,11 @@
         <member name="P:UnderAutomation.Staubli.StaubliController.LicenseInfo">
             <summary>
             Return information about your license
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.StaubliController.AssertValidLicense">
+            <summary>
+            Throws an exception if no valid license is registered.
             </summary>
         </member>
     </members>

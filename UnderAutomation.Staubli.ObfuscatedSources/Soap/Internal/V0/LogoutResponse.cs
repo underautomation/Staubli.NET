@@ -4,7 +4,9 @@
 
 
 namespace Soap.Internal.V0 {
-
+	/// <summary>
+	/// SOAP response for the logout operation.
+	/// </summary>
 	public class LogoutResponse {
 
 

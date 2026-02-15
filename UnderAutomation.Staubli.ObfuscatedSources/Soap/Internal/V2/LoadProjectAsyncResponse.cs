@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response for the asynchronous project load operation.
+	/// </summary>
 	public class LoadProjectAsyncResponse {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public LoadProjectAsyncResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V3 {
-
+	/// <summary>
+	/// SOAP request to restart the robot motion.
+	/// </summary>
 	public class RestartMotionRequest {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public RestartMotionRequest()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

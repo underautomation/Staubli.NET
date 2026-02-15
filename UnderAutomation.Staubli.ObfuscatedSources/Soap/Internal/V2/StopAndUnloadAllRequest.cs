@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP request to stop and unload all applications on the controller.
+	/// </summary>
 	public class StopAndUnloadAllRequest {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public StopAndUnloadAllRequest()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

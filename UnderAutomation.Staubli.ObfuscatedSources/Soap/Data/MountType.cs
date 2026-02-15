@@ -4,19 +4,29 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Robot mounting type.
+	/// </summary>
 	public enum MountType {
 
-
+		/// <summary>
+		/// Invalid or unknown mount type.
+		/// </summary>
 		Invalid = 0,
 
-
+		/// <summary>
+		/// Robot is floor-mounted.
+		/// </summary>
 		Floor = 1,
 
-
+		/// <summary>
+		/// Robot is ceiling-mounted.
+		/// </summary>
 		Ceiling = 2,
 
-
+		/// <summary>
+		/// Robot is wall-mounted.
+		/// </summary>
 		Wall = 3,
 	}
 }

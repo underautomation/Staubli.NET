@@ -4,7 +4,9 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response containing all physical I/Os.
+	/// </summary>
 	public class GetAllPhysicalIosResponse {
 
 
@@ -13,7 +15,9 @@ namespace Soap.Internal.V2 {
 			// Source is hidden, a Source licence is needed to access internal code...
 		}
 
-
+		/// <summary>
+		/// Nested data wrapper for the physical I/Os response.
+		/// </summary>
 		public GetAllPhysicalIosResponseData Data { get; set; }
 	}
 }

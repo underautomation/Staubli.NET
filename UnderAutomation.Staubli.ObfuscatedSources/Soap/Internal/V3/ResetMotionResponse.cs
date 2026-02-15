@@ -5,16 +5,23 @@
 using Soap.Data;
 
 namespace Soap.Internal.V3 {
-
+	/// <summary>
+	/// SOAP response for motion control operations (reset, restart, stop).
+	/// </summary>
 	public class ResetMotionResponse {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public ResetMotionResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...
 		}
 
-
+		/// <summary>
+		/// Initializes a new instance with the specified return code.
+		/// </summary>
+		/// <param name="motRet">Motion return code.</param>
 		public ResetMotionResponse(MotionReturnCode motRet)
 		{
 			// Source is hidden, a Source licence is needed to access internal code...
@@ -27,7 +34,9 @@ namespace Soap.Internal.V3 {
 			return default;
 		}
 
-
+		/// <summary>
+		/// Return code indicating the outcome of the motion operation.
+		/// </summary>
 		public MotionReturnCode ReturnCode { get; set; }
 	}
 }

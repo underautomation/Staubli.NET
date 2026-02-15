@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V0 {
-
+	/// <summary>
+	/// SOAP request to retrieve the list of robots managed by the controller.
+	/// </summary>
 	public class GetRobotsRequest {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public GetRobotsRequest()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

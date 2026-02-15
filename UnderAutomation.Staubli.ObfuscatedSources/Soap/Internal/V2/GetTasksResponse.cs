@@ -5,13 +5,19 @@
 using Soap.Data;
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response containing the list of controller tasks.
+	/// </summary>
 	public class GetTasksResponse {
 
-
+		/// <summary>
+		/// Array of tasks running on the controller.
+		/// </summary>
 		public ControllerTask[] Tasks;
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public GetTasksResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

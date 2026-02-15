@@ -25,6 +25,27 @@ namespace Soap.Data {
 			// Source is hidden, a Source licence is needed to access internal code...
 		}
 
+
+		public override string ToString()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override bool Equals(object obj)
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override int GetHashCode()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
 		/// <summary>
 		/// X component of the local X-axis vector (Normal X).
 		/// </summary>

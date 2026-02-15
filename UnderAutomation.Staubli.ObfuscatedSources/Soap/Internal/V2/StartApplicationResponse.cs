@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response for the start application operation.
+	/// </summary>
 	public class StartApplicationResponse {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public StartApplicationResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

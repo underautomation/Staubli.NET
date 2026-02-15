@@ -4,13 +4,19 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Represents the result of a robot motion command.
+	/// </summary>
 	public interface IMoveResult {
 
-
+		/// <summary>
+		/// Identifier of the motion command.
+		/// </summary>
 		int Id { get; }
 
-
+		/// <summary>
+		/// Return code indicating the outcome of the motion command.
+		/// </summary>
 		MotionReturnCode ReturnCode { get; }
 	}
 }

@@ -4,13 +4,19 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Represents the result of a forward kinematics computation.
+	/// </summary>
 	public interface IForwardKinematics {
 
-
+		/// <summary>
+		/// Cartesian position resulting from the forward kinematics computation.
+		/// </summary>
 		Frame Position { get; }
 
-
+		/// <summary>
+		/// Robot configuration associated with the computed position.
+		/// </summary>
 		Config Config { get; }
 	}
 }

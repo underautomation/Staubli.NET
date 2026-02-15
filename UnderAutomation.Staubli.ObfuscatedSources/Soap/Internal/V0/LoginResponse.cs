@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V0 {
-
+	/// <summary>
+	/// SOAP response containing the session identifier after login.
+	/// </summary>
 	public class LoginResponse {
 
-
+		/// <summary>
+		/// Session identifier assigned by the controller.
+		/// </summary>
 		public int Sid;
 
 

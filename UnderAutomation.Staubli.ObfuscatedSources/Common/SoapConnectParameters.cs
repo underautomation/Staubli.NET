@@ -5,7 +5,9 @@
 using Soap.Internal;
 
 namespace Common {
-
+	/// <summary>
+	/// SOAP connection parameters for communicating with the Staubli robot controller.
+	/// </summary>
 	public class SoapConnectParameters : SoapConnectParametersBase {
 
 		/// <summary>

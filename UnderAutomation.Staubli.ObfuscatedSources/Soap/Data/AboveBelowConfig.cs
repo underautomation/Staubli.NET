@@ -4,19 +4,29 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Configuration for above/below joint orientation.
+	/// </summary>
 	public enum AboveBelowConfig {
 
-
+		/// <summary>
+		/// Keep the same configuration as the current one.
+		/// </summary>
 		Same = 0,
 
-
+		/// <summary>
+		/// Above configuration.
+		/// </summary>
 		Above = 1,
 
-
+		/// <summary>
+		/// Below configuration.
+		/// </summary>
 		Below = 2,
 
-
+		/// <summary>
+		/// Free configuration (no constraint).
+		/// </summary>
 		Free = 3,
 	}
 }

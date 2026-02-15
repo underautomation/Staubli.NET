@@ -10,6 +10,27 @@ namespace Soap.Data {
 	public class CartesianJointPosition {
 
 
+		public override string ToString()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override bool Equals(object obj)
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override int GetHashCode()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
 		public CartesianJointPosition()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

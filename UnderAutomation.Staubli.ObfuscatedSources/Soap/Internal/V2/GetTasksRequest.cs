@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP request to retrieve all tasks from the controller.
+	/// </summary>
 	public class GetTasksRequest {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public GetTasksRequest()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

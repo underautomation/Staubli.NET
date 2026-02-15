@@ -66,7 +66,9 @@ namespace UnderAutomation.Staubli {
 		/// </summary>
 		public bool Enabled { get; }
 
-
+		/// <summary>
+		/// Internal SOAP client used to communicate with the robot controller.
+		/// </summary>
 		public SoapClientInternal Soap { get; }
 
 		/// <summary>

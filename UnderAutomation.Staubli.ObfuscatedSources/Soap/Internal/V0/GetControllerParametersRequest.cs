@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V0 {
-
+	/// <summary>
+	/// SOAP request to retrieve the controller parameters.
+	/// </summary>
 	public class GetControllerParametersRequest {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public GetControllerParametersRequest()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

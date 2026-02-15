@@ -4,10 +4,14 @@
 
 
 namespace Soap.Internal.V2 {
-
+	/// <summary>
+	/// SOAP response for the task suspend operation.
+	/// </summary>
 	public class TaskSuspendResponse {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public TaskSuspendResponse()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...

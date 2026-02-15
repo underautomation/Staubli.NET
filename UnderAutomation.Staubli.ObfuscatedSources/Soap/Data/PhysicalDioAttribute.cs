@@ -4,16 +4,43 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Attributes for a digital I/O.
+	/// </summary>
 	public class PhysicalDioAttribute {
 
-
+		/// <summary>
+		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute" data-throw-if-not-resolved="false"></xref> class.
+		/// </summary>
 		public PhysicalDioAttribute()
 		{
 			// Source is hidden, a Source licence is needed to access internal code...
 		}
 
 
+		public override string ToString()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override bool Equals(object obj)
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+
+		public override int GetHashCode()
+		{
+			// Source is hidden, a Source licence is needed to access internal code...
+			return default;
+		}
+
+		/// <summary>
+		/// Indicates whether the digital I/O logic is inverted.
+		/// </summary>
 		public bool Inverted { get; set; }
 	}
 }

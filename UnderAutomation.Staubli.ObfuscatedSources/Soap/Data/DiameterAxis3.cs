@@ -4,16 +4,24 @@
 
 
 namespace Soap.Data {
-
+	/// <summary>
+	/// Diameter of the third axis of the robot.
+	/// </summary>
 	public enum DiameterAxis3 {
 
-
+		/// <summary>
+		/// Invalid or unknown diameter.
+		/// </summary>
 		Invalid = 0,
 
-
+		/// <summary>
+		/// 20 mm diameter.
+		/// </summary>
 		D20 = 1,
 
-
+		/// <summary>
+		/// 25 mm diameter.
+		/// </summary>
 		D25 = 2,
 	}
 }
