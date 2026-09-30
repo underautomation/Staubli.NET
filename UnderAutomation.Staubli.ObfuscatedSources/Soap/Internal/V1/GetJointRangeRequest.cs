@@ -15,7 +15,7 @@ namespace Soap.Internal.V1 {
 		public int robot;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest"/> class.
 		/// </summary>
 		public GetJointRangeRequest()
 		{

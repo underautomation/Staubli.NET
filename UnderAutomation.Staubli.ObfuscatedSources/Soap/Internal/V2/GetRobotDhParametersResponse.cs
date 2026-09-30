@@ -21,7 +21,7 @@ namespace Soap.Internal.V2 {
 		public double lastDParam;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse"/> class.
 		/// </summary>
 		public GetRobotDhParametersResponse()
 		{

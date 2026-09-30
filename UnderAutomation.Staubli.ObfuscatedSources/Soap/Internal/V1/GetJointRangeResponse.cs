@@ -16,7 +16,7 @@ namespace Soap.Internal.V1 {
 		public JointRange range;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse"/> class.
 		/// </summary>
 		public GetJointRangeResponse()
 		{

@@ -10,7 +10,7 @@ namespace Soap.Data {
 	public class ScaraConfig {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Data.ScaraConfig" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Data.ScaraConfig"/> class.
 		/// </summary>
 		public ScaraConfig()
 		{

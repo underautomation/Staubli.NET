@@ -20,7 +20,7 @@ namespace Soap.Internal.V0 {
 		public string pwd;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest"/> class.
 		/// </summary>
 		public LoginRequest()
 		{

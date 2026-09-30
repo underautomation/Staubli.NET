@@ -26,7 +26,7 @@ namespace Soap.Internal.V0 {
 		public CartesianPosition frame;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest"/> class.
 		/// </summary>
 		public GetRobotJntCartPosRequest()
 		{

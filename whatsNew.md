@@ -1,3 +1,7 @@
-## Minor changes
+## .NET 10
 
-Allows the 30-day trial period to begin without having to explicitly enter a license key. This request should only be made when requesting an extension of the trial period.
+The NuGet package and `UnderAutomation.Staubli.zip` now contain a `net10.0` build. The package targets .NET Framework 3.5 to 4.8, .NET Standard 2.0 and 2.1, .NET Core 3.0, and .NET 5, 6, 8, 9 and 10.
+
+## Package information
+
+The NuGet package links to the Staubli page of underautomation.com, to the `Staubli.NET` repository and to its release notes.

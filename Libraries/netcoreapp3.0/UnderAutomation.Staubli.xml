@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <doc>
     <assembly>
         <name>UnderAutomation.Staubli</name>
@@ -58,139 +58,6 @@
         <member name="M:UnderAutomation.Staubli.ConnectionParameters.GetHashCode">
             <inheritdoc />
         </member>
-        <member name="T:UnderAutomation.Staubli.License.LicenseInfo">
-            <summary>
-            Information about a license key
-            </summary>
-        </member>
-        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.#ctor(System.String,System.String)">
-            <summary>
-            Create a new LicenseInfo instance to retrieve informations about a pair of identifier/key
-            This class should not be used to register your product. Please use static function RegisterLicense to specify your license.
-            </summary>
-            <param name="licenseIdentifier">The name of your organization (null for trial version)</param>
-            <param name="licenseKey">The key, associated to the identifier, supplied by UnderAutomation (null for trial version)</param>
-        </member>
-        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.AssertIsLicensed">
-            <summary>
-            Throw a InvalidLicenseException if the license is not valid
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.IsLicensed">
-            <summary>
-            True if the license state is Licensed, Trial or ExtraTrial ; false otherwise
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseKey">
-            <summary>
-            The license key supplied by UnderAutomation (null for trial period)
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.Product">
-            <summary>
-            Commercial name of this .NET Software library
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.EvaluationDaysLeft">
-            <summary>
-            Remaining days of the trial period. Null if the product is licensed. It could be negative if the trial period is ended since several days.
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.EvaluationStartDate">
-            <summary>
-            The date the trial period starts. If the product is licensed, the date of the library first use.
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.Licensee">
-            <summary>
-            Name of your organisation
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.TrialPeriodExpirationDate">
-            <summary>
-            The date the product will expire. Null if the product is licensed.
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.State">
-            <summary>
-            The current license state
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.ProductReleaseDate">
-            <summary>
-            The date this version of the product was released.
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.MaintenanceYears">
-            <summary>
-            Number of maintenance years included in your license
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseIssuedDate">
-            <summary>
-            The date you get the license
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.MaintenanceExpirationDate">
-            <summary>
-            The date your maintenance contract end and you no longer can use this license with newer versions.
-            </summary>
-        </member>
-        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.ToString">
-            <summary>
-            A human description of the license
-            </summary>
-        </member>
-        <member name="T:UnderAutomation.Staubli.License.LicenseState">
-            <summary>
-            States that can take a license
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.None">
-            <summary>
-            No license has been provided
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.Invalid">
-            <summary>
-            The pair License Identifier and License Key are incompatible, you cannot use the library
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.Trial">
-            <summary>
-            The library is in a trial period, you can use the library
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.ExtraTrial">
-            <summary>
-            The library is in an extra trial period, you can use the library
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.Expired">
-            <summary>
-            The trial period as expired, you no more can use the library
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.MaintenanceNeeded">
-            <summary>
-            Your license does not allow you to use such a recent release. Please buy maintenance to use this version
-            </summary>
-        </member>
-        <member name="F:UnderAutomation.Staubli.License.LicenseState.Licensed">
-            <summary>
-            Congratulations, the library is licensed.
-            </summary>
-        </member>
-        <member name="T:UnderAutomation.Staubli.License.InvalidLicenseException">
-            <summary>
-            Exception thrown while using the product if the license is not valid.
-            </summary>
-        </member>
-        <member name="P:UnderAutomation.Staubli.License.InvalidLicenseException.LicenseInfo">
-            <summary>
-            The license that causes this exception
-            </summary>
-        </member>
         <member name="T:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig">
             <summary>
             Configuration for above/below joint orientation.
@@ -238,7 +105,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.AnthroConfig.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.AnthroConfig"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.AnthroConfig" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.AnthroConfig.ToString">
@@ -331,7 +198,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianPosition.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.CartesianPosition"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.CartesianPosition" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.CartesianPosition.ToString">
@@ -365,7 +232,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.Config.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Config"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Config" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.Config.ToString">
@@ -419,7 +286,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.ControllerTask.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ControllerTask"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ControllerTask" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.ControllerTask.ToString">
@@ -493,7 +360,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.DhParameters.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.DhParameters"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.DhParameters" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.DhParameters.ToString">
@@ -674,7 +541,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.JointRange.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.JointRange"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.JointRange" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.JointRange.ToString">
@@ -823,7 +690,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.MotionDesc.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.MotionDesc"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.MotionDesc" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.MotionDesc.ToString">
@@ -927,7 +794,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.Parameter.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Parameter"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Parameter" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.Parameter.ToString">
@@ -956,7 +823,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalAioAttribute.ToString">
@@ -980,7 +847,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalDioAttribute.ToString">
@@ -1043,7 +910,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoAttribute.ToString">
@@ -1107,7 +974,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoState"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoState" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoState.ToString">
@@ -1136,7 +1003,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.PhysicalIoWriteResponse.ToString">
@@ -1230,7 +1097,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.ProgramLine.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ProgramLine"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ProgramLine" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.ProgramLine.ToString">
@@ -1329,7 +1196,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.Robot.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Robot"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.Robot" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.Robot.ToString">
@@ -1353,7 +1220,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.ScaraConfig.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ScaraConfig"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.ScaraConfig" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.ScaraConfig.ToString">
@@ -1446,7 +1313,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.VrbxConfig.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.VrbxConfig"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Data.VrbxConfig" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Data.VrbxConfig.ToString">
@@ -1843,15 +1710,6 @@
             Session ID for the SOAP connection
             </summary>
         </member>
-        <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.ConnectInternal(System.String,System.String,System.String,System.Int32)">
-            <summary>
-            Connect to a robot
-            </summary>
-            <param name="ip">IP or network name of the robot</param>
-            <param name="user">Username for the SOAP service</param>
-            <param name="password">Password for the SOAP service</param>
-            <param name="port">Port of the SOAP service (default: 851)</param>
-        </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.SoapClientBase.Disconnect">
             <summary>
             Disconnect SOAP client from robot
@@ -2093,7 +1951,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse">
@@ -2103,7 +1961,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersResponse.#ctor(UnderAutomation.Staubli.Soap.Data.Parameter[])">
@@ -2124,7 +1982,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.CartesianPosition,UnderAutomation.Staubli.Soap.Data.CartesianPosition)">
@@ -2157,7 +2015,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJntCartPosResponse.#ctor(System.Double[],UnderAutomation.Staubli.Soap.Data.CartesianPosition)">
@@ -2184,7 +2042,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosRequest.#ctor(System.Int32)">
@@ -2205,7 +2063,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotJointPosResponse.#ctor(System.Double[])">
@@ -2226,7 +2084,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse">
@@ -2236,7 +2094,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse" /> class.
             </summary>
         </member>
         <member name="F:UnderAutomation.Staubli.Soap.Internal.V0.GetRobotsResponse.out">
@@ -2251,7 +2109,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.LoginRequest.#ctor(System.String,System.String)">
@@ -2288,7 +2146,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.LogoutResponse">
@@ -2303,7 +2161,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Request.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Request"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Request" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response">
@@ -2313,7 +2171,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response" /> class.
             </summary>
         </member>
         <member name="F:UnderAutomation.Staubli.Soap.Internal.V1.GetApplications1Response.Applications">
@@ -2328,7 +2186,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeRequest.#ctor(System.Int32)">
@@ -2349,7 +2207,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V1.GetJointRangeResponse.#ctor(UnderAutomation.Staubli.Soap.Data.JointRange)">
@@ -2370,7 +2228,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetAllPhysicalIosResponse">
@@ -2410,7 +2268,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersRequest.#ctor(System.Int32)">
@@ -2431,7 +2289,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetRobotDhParametersResponse.#ctor(UnderAutomation.Staubli.Soap.Data.DhParameters[],System.Double)">
@@ -2458,7 +2316,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse">
@@ -2468,7 +2326,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse" /> class.
             </summary>
         </member>
         <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.GetTasksResponse.Tasks">
@@ -2483,7 +2341,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncRequest.#ctor(System.String)">
@@ -2504,7 +2362,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.LoadProjectAsyncResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest">
@@ -2514,7 +2372,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosRequest.#ctor(System.String[],System.Boolean)">
@@ -2541,7 +2399,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.ReadIosResponse.#ctor(UnderAutomation.Staubli.Soap.Data.PhysicalIoState[])">
@@ -2562,7 +2420,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationRequest.#ctor(System.String)">
@@ -2583,7 +2441,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StartApplicationResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest">
@@ -2593,7 +2451,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse">
@@ -2603,7 +2461,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopAndUnloadAllResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest">
@@ -2613,7 +2471,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse">
@@ -2623,7 +2481,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest">
@@ -2633,7 +2491,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillRequest.#ctor(System.String,System.String)">
@@ -2660,7 +2518,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskKillResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest">
@@ -2670,7 +2528,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeRequest.#ctor(System.String,System.String)">
@@ -2697,7 +2555,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskResumeResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest">
@@ -2707,7 +2565,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendRequest.#ctor(System.String,System.String)">
@@ -2734,7 +2592,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.TaskSuspendResponse" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest">
@@ -2744,7 +2602,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosRequest.#ctor(System.String[],System.Double[])">
@@ -2771,7 +2629,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse" /> class.
             </summary>
         </member>
         <member name="F:UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse.out">
@@ -2786,7 +2644,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinRequest.#ctor(System.Int32,System.Double[])">
@@ -2813,7 +2671,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ForwardKinResponse.#ctor(UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Config)">
@@ -2843,7 +2701,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveCRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
@@ -2882,7 +2740,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
@@ -2915,7 +2773,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJRequest.#ctor(System.Int32,System.Double[],UnderAutomation.Staubli.Soap.Data.MotionDesc)">
@@ -2948,7 +2806,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveJJResponse.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.MotionReturnCode)">
@@ -2978,7 +2836,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.MoveLRequest.#ctor(System.Int32,UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.MotionDesc)">
@@ -3011,7 +2869,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse">
@@ -3021,7 +2879,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ResetMotionResponse.#ctor(UnderAutomation.Staubli.Soap.Data.MotionReturnCode)">
@@ -3045,7 +2903,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.RestartMotionRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest">
@@ -3055,7 +2913,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinRequest.#ctor(System.Int32,System.Double[],UnderAutomation.Staubli.Soap.Data.Frame,UnderAutomation.Staubli.Soap.Data.Config,UnderAutomation.Staubli.Soap.Data.JointRange)">
@@ -3100,7 +2958,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse.#ctor(System.Double[],UnderAutomation.Staubli.Soap.Data.ReversingResult)">
@@ -3130,7 +2988,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest.#ctor(System.Boolean)">
@@ -3151,7 +3009,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse" /> class.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.SetPowerResponse.#ctor(UnderAutomation.Staubli.Soap.Data.PowerReturnCode)">
@@ -3175,7 +3033,7 @@
         </member>
         <member name="M:UnderAutomation.Staubli.Soap.Internal.V3.StopMotionRequest.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.StopMotionRequest"/> class.
+            Initializes a new instance of the <see cref="T:UnderAutomation.Staubli.Soap.Internal.V3.StopMotionRequest" /> class.
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.SoapClient">
@@ -3252,9 +3110,132 @@
             Return information about your license
             </summary>
         </member>
-        <member name="M:UnderAutomation.Staubli.StaubliController.AssertValidLicense">
+        <member name="T:UnderAutomation.Staubli.License.LicenseInfo">
             <summary>
-            Throws an exception if no valid license is registered.
+            Information about a license key
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.#ctor(System.String,System.String)">
+            <summary>
+            Create a new LicenseInfo instance to retrieve informations about a pair of identifier/key
+            This class should not be used to register your product. Please use static function RegisterLicense to specify your license.
+            </summary>
+            <param name="licenseIdentifier">The name of your organization (null for trial version)</param>
+            <param name="licenseKey">The key, associated to the identifier, supplied by UnderAutomation (null for trial version)</param>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.IsLicensed">
+            <summary>
+            True if the license state is Licensed, Trial or ExtraTrial ; false otherwise
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseKey">
+            <summary>
+            The license key supplied by UnderAutomation (null for trial period)
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.Product">
+            <summary>
+            Commercial name of this .NET Software library
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.EvaluationDaysLeft">
+            <summary>
+            Remaining days of the trial period. Null if the product is licensed. It could be negative if the trial period is ended since several days.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.EvaluationStartDate">
+            <summary>
+            The date the trial period starts. If the product is licensed, the date of the library first use.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.Licensee">
+            <summary>
+            Name of your organisation
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.TrialPeriodExpirationDate">
+            <summary>
+            The date the product will expire. Null if the product is licensed.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.State">
+            <summary>
+            The current license state
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.ProductReleaseDate">
+            <summary>
+            The date this version of the product was released.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.MaintenanceYears">
+            <summary>
+            Number of maintenance years included in your license
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.LicenseIssuedDate">
+            <summary>
+            The date you get the license
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.LicenseInfo.MaintenanceExpirationDate">
+            <summary>
+            The date your maintenance contract end and you no longer can use this license with newer versions.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.License.LicenseInfo.ToString">
+            <summary>
+            A human description of the license
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.License.LicenseState">
+            <summary>
+            States that can take a license
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.None">
+            <summary>
+            No license has been provided
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Invalid">
+            <summary>
+            The pair License Identifier and License Key are incompatible, you cannot use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Trial">
+            <summary>
+            The library is in a trial period, you can use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.ExtraTrial">
+            <summary>
+            The library is in an extra trial period, you can use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Expired">
+            <summary>
+            The trial period as expired, you no more can use the library
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.MaintenanceNeeded">
+            <summary>
+            Your license does not allow you to use such a recent release. Please buy maintenance to use this version
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.License.LicenseState.Licensed">
+            <summary>
+            Congratulations, the library is licensed.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.License.InvalidLicenseException">
+            <summary>
+            Exception thrown while using the product if the license is not valid.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.License.InvalidLicenseException.LicenseInfo">
+            <summary>
+            The license that causes this exception
             </summary>
         </member>
     </members>

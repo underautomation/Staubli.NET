@@ -26,7 +26,7 @@ namespace Soap.Internal.V3 {
 		public MotionDesc mdesc;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V3.MoveJCRequest"/> class.
 		/// </summary>
 		public MoveJCRequest()
 		{

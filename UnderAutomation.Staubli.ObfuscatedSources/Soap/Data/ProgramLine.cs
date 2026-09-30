@@ -10,7 +10,7 @@ namespace Soap.Data {
 	public class ProgramLine {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Data.ProgramLine" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Data.ProgramLine"/> class.
 		/// </summary>
 		public ProgramLine()
 		{

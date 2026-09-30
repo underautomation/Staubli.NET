@@ -10,7 +10,7 @@ namespace Soap.Data {
 	public class AnthroConfig {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Data.AnthroConfig" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Data.AnthroConfig"/> class.
 		/// </summary>
 		public AnthroConfig()
 		{

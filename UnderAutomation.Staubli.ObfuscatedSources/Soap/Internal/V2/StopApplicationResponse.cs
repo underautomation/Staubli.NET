@@ -10,7 +10,7 @@ namespace Soap.Internal.V2 {
 	public class StopApplicationResponse {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V2.StopApplicationResponse"/> class.
 		/// </summary>
 		public StopApplicationResponse()
 		{

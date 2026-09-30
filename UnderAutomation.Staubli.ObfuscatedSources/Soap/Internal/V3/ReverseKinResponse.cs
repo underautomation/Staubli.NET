@@ -11,7 +11,7 @@ namespace Soap.Internal.V3 {
 	public class ReverseKinResponse : IReverseKinematics {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V3.ReverseKinResponse"/> class.
 		/// </summary>
 		public ReverseKinResponse()
 		{

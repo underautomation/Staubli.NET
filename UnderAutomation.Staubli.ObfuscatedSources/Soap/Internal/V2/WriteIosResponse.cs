@@ -16,7 +16,7 @@ namespace Soap.Internal.V2 {
 		public PhysicalIoWriteResponse[] @out;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V2.WriteIosResponse"/> class.
 		/// </summary>
 		public WriteIosResponse()
 		{

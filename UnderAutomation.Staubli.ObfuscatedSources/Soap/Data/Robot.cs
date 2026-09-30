@@ -10,7 +10,7 @@ namespace Soap.Data {
 	public class Robot {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Data.Robot" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Data.Robot"/> class.
 		/// </summary>
 		public Robot()
 		{

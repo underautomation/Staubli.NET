@@ -10,7 +10,7 @@ namespace Soap.Internal.V0 {
 	public class LogoutRequest {
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V0.LogoutRequest"/> class.
 		/// </summary>
 		public LogoutRequest()
 		{

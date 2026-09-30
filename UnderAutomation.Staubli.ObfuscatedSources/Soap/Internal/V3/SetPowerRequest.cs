@@ -15,7 +15,7 @@ namespace Soap.Internal.V3 {
 		public bool power;
 
 		/// <summary>
-		/// Initializes a new instance of the <xref href="UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest" data-throw-if-not-resolved="false"></xref> class.
+		/// Initializes a new instance of the <see cref="UnderAutomation.Staubli.Soap.Internal.V3.SetPowerRequest"/> class.
 		/// </summary>
 		public SetPowerRequest()
 		{
