@@ -4,6 +4,28 @@
         <name>UnderAutomation.Staubli</name>
     </assembly>
     <members>
+        <member name="T:UnderAutomation.Staubli.Common.FileConnectParameters">
+            <summary>
+            Connection parameters of the file client (robot.File).
+            With a real controller, the files are accessed through the FTP server of the controller, with the user and the password of these parameters.
+            With a controller emulated by Staubli Robotics Suite, give the path of its .controller file as address: the files are accessed in the folder of this file.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Common.FileConnectParameters.DEFAULT_PORT">
+            <summary>
+            Default port of the FTP server
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Common.FileConnectParameters.DEFAULT_TIMEOUT_MS">
+            <summary>
+            Default timeout of the FTP connection and of the transfers, in milliseconds
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Common.FileConnectParameters.Enable">
+            <summary>
+            Should use this service (default: false)
+            </summary>
+        </member>
         <member name="T:UnderAutomation.Staubli.Common.SoapConnectParameters">
             <summary>
             SOAP connection parameters for communicating with the Staubli robot controller.
@@ -11,7 +33,7 @@
         </member>
         <member name="F:UnderAutomation.Staubli.Common.SoapConnectParameters.DEFAULT_PORT">
             <summary>
-            Default port for SOAP service
+            Default port of the SOAP server of a real controller (851), used when Port is 0
             </summary>
         </member>
         <member name="P:UnderAutomation.Staubli.Common.SoapConnectParameters.Enable">
@@ -36,7 +58,11 @@
         </member>
         <member name="P:UnderAutomation.Staubli.ConnectionParameters.Address">
             <summary>
-            Address of the robot (IP or host name) 
+            Address of the robot: IP or host name of a real controller.
+            For a controller emulated by Staubli Robotics Suite, path of the .controller file of the controller in the cell
+            (for example C:\...\MyCell\Controller1\Controller1.controller): the SOAP client then connects to the local computer, and the file
+            client uses the folder of this file. Give a UNC path when the emulation runs on another computer: the SOAP client then connects to
+            this computer. A path that is not a .controller file is refused.
             </summary>
         </member>
         <member name="P:UnderAutomation.Staubli.ConnectionParameters.PingBeforeConnect">
@@ -49,6 +75,11 @@
             Soap connection parameters
             </summary>
         </member>
+        <member name="P:UnderAutomation.Staubli.ConnectionParameters.File">
+            <summary>
+            File client connection parameters (upload, download, listing and management of the files of the controller)
+            </summary>
+        </member>
         <member name="M:UnderAutomation.Staubli.ConnectionParameters.ToString">
             <inheritdoc />
         </member>
@@ -57,6 +88,316 @@
         </member>
         <member name="M:UnderAutomation.Staubli.ConnectionParameters.GetHashCode">
             <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.FileClient">
+            <summary>
+            Standalone client for the files of a Staubli controller: upload, download, listing and management.
+            With a real controller, the files are accessed through the FTP server of the controller.
+            With a controller emulated by Staubli Robotics Suite, they are accessed in the folder of its .controller file.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.FileClient.#ctor">
+            <summary>
+            Create a new instance of FileClient
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.FileClient.Connect(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Connect to a controller
+            </summary>
+            <param name="address">IP or host name of a real controller. For a controller emulated by Staubli Robotics Suite, path of its .controller file
+            (local path, or UNC path when the emulation runs on another computer).</param>
+            <param name="user">User of the FTP server of the controller. Not used with an emulated controller.</param>
+            <param name="password">Password of the user. Not used with an emulated controller.</param>
+            <param name="port">Port of the FTP server of the controller</param>
+            <param name="timeoutMs">Timeout of the FTP connection and of the transfers, in milliseconds</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The connection to the FTP server failed</exception>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.FileException">
+            <summary>
+            Exception thrown when an operation on the files of the controller fails: the controller refused it, the file does not exist,
+            or the communication failed. The message gives the reason and, when it is known, what to do.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileException.RemotePath">
+            <summary>
+            Path of the file or folder on the controller concerned by the operation. Null when the operation has no path.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileException.ReplyCode">
+            <summary>
+            FTP reply code returned by the controller (for example 550). 0 when the controller did not reply, and with an emulated controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileException.ReplyMessage">
+            <summary>
+            Reply text returned by the controller. Null when the controller did not reply, and with an emulated controller.
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.FileItem">
+            <summary>
+            A file or a folder of the controller
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileItem.Name">
+            <summary>
+            Name of the file or folder, without its path (for example "myApp.pjx")
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileItem.FullName">
+            <summary>
+            Full path of the file or folder on the controller (for example "/usr/usrapp/myApp/myApp.pjx")
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileItem.Type">
+            <summary>
+            File or folder
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileItem.Size">
+            <summary>
+            Size of the file in bytes. 0 for a folder, and 0 when the controller does not give the size.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.FileItem.Modified">
+            <summary>
+            Date and time of the last modification, as given by the controller. With a controller emulated by Staubli Robotics Suite, local time of the computer.
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.FileItem.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.FileItemType">
+            <summary>
+            Type of an item of the controller file system
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Files.FileItemType.File">
+            <summary>
+            A file
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Files.FileItemType.Directory">
+            <summary>
+            A folder
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.Internal.FileClientBase">
+            <summary>
+            Upload, download, listing and management of the files of the controller.
+            With a real controller, the files are accessed through the FTP server of the controller.
+            With a controller emulated by Staubli Robotics Suite, there is no FTP server: give the path of its .controller file as address. The files are
+            accessed in the folder of this file, which has the same tree. The paths are the same in both cases (for example "/usr/usrapp/myApp/myApp.pjx").
+            A path that does not start with "/" is relative to the root of the controller.
+            The VAL 3 applications are in the folder "/usr/usrapp" of the controller (<see cref="F:UnderAutomation.Staubli.Files.Internal.FileClientBase.USER_APP_FOLDER" />): one sub-folder per application,
+            named as the application, that contains the project file (myApp.pjx) and the other files of the application.
+            </summary>
+        </member>
+        <member name="F:UnderAutomation.Staubli.Files.Internal.FileClientBase.USER_APP_FOLDER">
+            <summary>
+            Folder of the VAL 3 applications on the controller. Each application is in a sub-folder named as the application
+            (for example "/usr/usrapp/myApp/myApp.pjx"). The project path "Disk://myApp/myApp.pjx" of robot.Soap.LoadProject(...) is this file.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileClientBase.Ip">
+            <summary>
+            IP or host name of the controller. Null with an emulated controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileClientBase.Port">
+            <summary>
+            Port of the FTP server of the controller. 0 with an emulated controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileClientBase.ControllerFile">
+            <summary>
+            Full path of the .controller file of the controller emulated by Staubli Robotics Suite. Null with a real controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileClientBase.ControllerFolder">
+            <summary>
+            Full path of the folder of the .controller file: root of the files of the emulated controller. Null with a real controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileClientBase.IsSimulated">
+            <summary>
+            True when the files are accessed in the folder of the .controller file of a controller emulated by Staubli Robotics Suite,
+            false when they are accessed through FTP
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileClientBase.Enabled">
+            <summary>
+            True when the client is connected
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.Disconnect">
+            <summary>
+            Disconnects the client
+            </summary>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.GetListing(System.String)">
+            <summary>
+            Lists the files and folders of a folder of the controller
+            </summary>
+            <param name="path">Path of the folder on the controller (for example "/usr/usrapp")</param>
+            <returns>The files and folders of the folder</returns>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The folder does not exist or the controller refused the operation</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.GetFileInfo(System.String)">
+            <summary>
+            Gets information about a file or a folder of the controller
+            </summary>
+            <param name="path">Path of the file or folder on the controller</param>
+            <returns>The information, or null when the file or folder does not exist</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.FileExists(System.String)">
+            <summary>
+            Checks if a file exists on the controller
+            </summary>
+            <param name="path">Path of the file on the controller</param>
+            <returns>True if the file exists</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.DirectoryExists(System.String)">
+            <summary>
+            Checks if a folder exists on the controller
+            </summary>
+            <param name="path">Path of the folder on the controller</param>
+            <returns>True if the folder exists</returns>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.CreateDirectory(System.String)">
+            <summary>
+            Creates a folder on the controller, with its parent folders when they do not exist. Nothing is done when the folder exists.
+            </summary>
+            <param name="path">Path of the new folder on the controller</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The controller refused the operation</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.DeleteFile(System.String)">
+            <summary>
+            Deletes a file of the controller
+            </summary>
+            <param name="path">Path of the file on the controller</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The file does not exist or the controller refused the operation</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.DeleteDirectory(System.String)">
+            <summary>
+            Deletes a folder of the controller and all its content
+            </summary>
+            <param name="path">Path of the folder on the controller</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The folder does not exist or the controller refused the operation</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.Rename(System.String,System.String)">
+            <summary>
+            Renames or moves a file or a folder of the controller
+            </summary>
+            <param name="path">Path of the file or folder on the controller</param>
+            <param name="newPath">New path of the file or folder on the controller</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The file or folder does not exist, the new path exists, or the controller refused the operation</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.UploadFileToController(System.String,System.String,System.Boolean,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Uploads a local file to the controller. The file of the controller is replaced when it exists.
+            </summary>
+            <param name="localPath">Path of the file on this computer</param>
+            <param name="remotePath">Path of the file on the controller (for example "/usr/usrapp/myApp/myApp.pjx")</param>
+            <param name="createRemoteDir">Create the folder of the file on the controller when it does not exist</param>
+            <param name="progress">Called during the transfer with the percentage of the file transferred</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The controller refused the file</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.UploadBytesToController(System.Byte[],System.String,System.Boolean,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Uploads data as a file to the controller. The file of the controller is replaced when it exists.
+            </summary>
+            <param name="data">Content of the file</param>
+            <param name="remotePath">Path of the file on the controller (for example "/usr/usrapp/myApp/myApp.pjx")</param>
+            <param name="createRemoteDir">Create the folder of the file on the controller when it does not exist</param>
+            <param name="progress">Called during the transfer with the percentage of the file transferred</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The controller refused the file</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.UploadStreamToController(System.IO.Stream,System.String,System.Boolean,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Uploads the content of a stream as a file to the controller, from the current position of the stream to its end. The file of the controller is replaced when it exists.
+            </summary>
+            <param name="stream">Stream to read</param>
+            <param name="remotePath">Path of the file on the controller (for example "/usr/usrapp/myApp/myApp.pjx")</param>
+            <param name="createRemoteDir">Create the folder of the file on the controller when it does not exist</param>
+            <param name="progress">Called during the transfer with the percentage of the file transferred, -1 when the length of the stream is not known</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The controller refused the file</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.UploadApplicationToController(System.String,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Uploads a complete VAL 3 application to the controller. The local folder of the application, named as the application and with its
+            project file inside (for example C:\MyApps\myApp\myApp.pjx), is copied with its sub-folders to "/usr/usrapp/myApp" (<see cref="F:UnderAutomation.Staubli.Files.Internal.FileClientBase.USER_APP_FOLDER" />).
+            When the application already exists on the controller, its folder is deleted first: the files that are not in the local folder are removed.
+            Stop and unload the application before (robot.Soap.StopAndUnloadAll()), then load it after (robot.Soap.LoadProject("Disk://myApp/myApp.pjx")).
+            </summary>
+            <param name="localAppFolder">Folder of the application on this computer</param>
+            <param name="progress">Called during the transfer with the percentage of all the files transferred</param>
+            <returns>Path of the folder of the application on the controller (for example "/usr/usrapp/myApp")</returns>
+            <exception cref="T:System.IO.DirectoryNotFoundException">The local folder does not exist</exception>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The controller refused a file or a folder, for example because the application is loaded</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.DownloadFileFromController(System.String,System.String,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Downloads a file of the controller to a local file. The local file is replaced when it exists, and its folder is created when it does not exist.
+            </summary>
+            <param name="localPath">Path of the file on this computer</param>
+            <param name="remotePath">Path of the file on the controller (for example "/usr/usrapp/myApp/myApp.pjx")</param>
+            <param name="progress">Called during the transfer with the percentage of the file transferred</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The file does not exist on the controller or the transfer failed</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.DownloadBytesFromController(System.String,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Downloads a file of the controller and returns its content
+            </summary>
+            <param name="remotePath">Path of the file on the controller (for example "/usr/usrapp/myApp/myApp.pjx")</param>
+            <param name="progress">Called during the transfer with the percentage of the file transferred</param>
+            <returns>The content of the file</returns>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The file does not exist on the controller or the transfer failed</exception>
+        </member>
+        <member name="M:UnderAutomation.Staubli.Files.Internal.FileClientBase.DownloadStreamFromController(System.IO.Stream,System.String,UnderAutomation.Staubli.Files.OnProgressDelegate)">
+            <summary>
+            Downloads a file of the controller and writes its content to a stream
+            </summary>
+            <param name="stream">Stream that receives the content of the file</param>
+            <param name="remotePath">Path of the file on the controller (for example "/usr/usrapp/myApp/myApp.pjx")</param>
+            <param name="progress">Called during the transfer with the percentage of the file transferred</param>
+            <exception cref="T:UnderAutomation.Staubli.Files.FileException">The file does not exist on the controller or the transfer failed</exception>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.Internal.FileClientInternal">
+            <summary>
+            File client of <see cref="T:UnderAutomation.Staubli.StaubliController" />, connected by <see cref="M:UnderAutomation.Staubli.StaubliController.Connect(UnderAutomation.Staubli.ConnectionParameters)" />
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.Internal.FileConnectParametersBase">
+            <summary>
+            Base class for the connection parameters of the file client
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileConnectParametersBase.User">
+            <summary>
+            User of the FTP server of the controller (default: default). Not used with a controller emulated by Staubli Robotics Suite.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileConnectParametersBase.Password">
+            <summary>
+            Password of the user (default: default). Not used with a controller emulated by Staubli Robotics Suite.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileConnectParametersBase.Port">
+            <summary>
+            Port of the FTP server of the controller (default: 21)
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.Files.Internal.FileConnectParametersBase.TimeoutMs">
+            <summary>
+            Timeout of the FTP connection and of the transfers, in milliseconds (default: 30000)
+            </summary>
+        </member>
+        <member name="T:UnderAutomation.Staubli.Files.OnProgressDelegate">
+            <summary>
+            Reports the progress of a file transfer
+            </summary>
+            <param name="progress">Percentage of the transfer, from 0 to 100. -1 when the progress is not known.</param>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Data.AboveBelowConfig">
             <summary>
@@ -1941,7 +2282,8 @@
         </member>
         <member name="P:UnderAutomation.Staubli.Soap.Internal.SoapConnectParametersBase.Port">
             <summary>
-            Port of the SOAP service (default: 851)
+            Port of the SOAP service. Default: 0 (automatic). With 0, the SDK uses 851 for a real controller, and the SOAP port of the network
+            configuration of a controller emulated by Staubli Robotics Suite (851 when it is not found).
             </summary>
         </member>
         <member name="T:UnderAutomation.Staubli.Soap.Internal.V0.GetControllerParametersRequest">
@@ -3050,10 +3392,11 @@
             <summary>
             Connect to a robot
             </summary>
-            <param name="ip">IP or network name of the robot</param>
+            <param name="ip">IP or network name of the robot. For a controller emulated by Staubli Robotics Suite, path of the .controller file of the controller
+            in the cell (UNC path when the emulation runs on another computer).</param>
             <param name="user">Username for the SOAP service</param>
             <param name="password">Password for the SOAP service</param>
-            <param name="port">Port of the SOAP service</param>
+            <param name="port">Port of the SOAP service. 0 (automatic): 851 for a real controller, port of the network configuration of an emulated controller.</param>
         </member>
         <member name="T:UnderAutomation.Staubli.StaubliController">
             <summary>
@@ -3072,7 +3415,7 @@
         </member>
         <member name="P:UnderAutomation.Staubli.StaubliController.Address">
             <summary>
-            IP or robot name
+            IP or robot name, or path of the .controller file of a controller emulated by Staubli Robotics Suite
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.StaubliController.Connect(UnderAutomation.Staubli.ConnectionParameters)">
@@ -3094,6 +3437,13 @@
         <member name="P:UnderAutomation.Staubli.StaubliController.Soap">
             <summary>
             Internal SOAP client used to communicate with the robot controller.
+            </summary>
+        </member>
+        <member name="P:UnderAutomation.Staubli.StaubliController.File">
+            <summary>
+            File client: upload, download, listing and management of the files of the controller.
+            Uses the FTP server of a real controller, or the folder of the .controller file of a controller emulated by Staubli Robotics Suite.
+            The VAL 3 applications are in the folder "/usr/usrapp": robot.File.UploadApplicationToController(...) sends a complete application.
             </summary>
         </member>
         <member name="M:UnderAutomation.Staubli.StaubliController.RegisterLicense(System.String,System.String)">

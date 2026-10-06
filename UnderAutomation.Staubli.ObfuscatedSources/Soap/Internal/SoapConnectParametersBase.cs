@@ -3,7 +3,7 @@
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
 
-namespace Soap.Internal {
+namespace UnderAutomation.Staubli.Soap.Internal {
 	/// <summary>
 	/// Base class for SOAP connection parameters
 	/// </summary>
@@ -26,7 +26,8 @@ namespace Soap.Internal {
 		public string Password { get; set; }
 
 		/// <summary>
-		/// Port of the SOAP service (default: 851)
+		/// Port of the SOAP service. Default: 0 (automatic). With 0, the SDK uses 851 for a real controller, and the SOAP port of the network
+		/// configuration of a controller emulated by Staubli Robotics Suite (851 when it is not found).
 		/// </summary>
 		public int Port { get; set; }
 	}

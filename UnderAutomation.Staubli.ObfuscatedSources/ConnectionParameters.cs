@@ -2,7 +2,7 @@
 // This file is an empty shell containing only public C# items.
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
-using Common;
+using UnderAutomation.Staubli.Common;
 
 namespace UnderAutomation.Staubli {
 	/// <summary>
@@ -48,7 +48,11 @@ namespace UnderAutomation.Staubli {
 		}
 
 		/// <summary>
-		/// Address of the robot (IP or host name)
+		/// Address of the robot: IP or host name of a real controller.
+		/// For a controller emulated by Staubli Robotics Suite, path of the .controller file of the controller in the cell
+		/// (for example C:\...\MyCell\Controller1\Controller1.controller): the SOAP client then connects to the local computer, and the file
+		/// client uses the folder of this file. Give a UNC path when the emulation runs on another computer: the SOAP client then connects to
+		/// this computer. A path that is not a .controller file is refused.
 		/// </summary>
 		public string Address { get; set; }
 
@@ -61,5 +65,10 @@ namespace UnderAutomation.Staubli {
 		/// Soap connection parameters
 		/// </summary>
 		public SoapConnectParameters Soap { get; set; }
+
+		/// <summary>
+		/// File client connection parameters (upload, download, listing and management of the files of the controller)
+		/// </summary>
+		public FileConnectParameters File { get; set; }
 	}
 }

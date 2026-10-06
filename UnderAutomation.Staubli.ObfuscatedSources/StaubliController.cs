@@ -2,8 +2,9 @@
 // This file is an empty shell containing only public C# items.
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
-using License;
-using Soap.Internal;
+using UnderAutomation.Staubli.License;
+using UnderAutomation.Staubli.Soap.Internal;
+using UnderAutomation.Staubli.Files.Internal;
 
 namespace UnderAutomation.Staubli {
 	/// <summary>
@@ -57,7 +58,7 @@ namespace UnderAutomation.Staubli {
 		}
 
 		/// <summary>
-		/// IP or robot name
+		/// IP or robot name, or path of the .controller file of a controller emulated by Staubli Robotics Suite
 		/// </summary>
 		public string Address { get; }
 
@@ -70,6 +71,13 @@ namespace UnderAutomation.Staubli {
 		/// Internal SOAP client used to communicate with the robot controller.
 		/// </summary>
 		public SoapClientInternal Soap { get; }
+
+		/// <summary>
+		/// File client: upload, download, listing and management of the files of the controller.
+		/// Uses the FTP server of a real controller, or the folder of the .controller file of a controller emulated by Staubli Robotics Suite.
+		/// The VAL 3 applications are in the folder "/usr/usrapp": robot.File.UploadApplicationToController(...) sends a complete application.
+		/// </summary>
+		public FileClientInternal File { get; }
 
 		/// <summary>
 		/// Return information about your license

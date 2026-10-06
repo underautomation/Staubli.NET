@@ -3,7 +3,7 @@
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
 
-namespace Soap.Data {
+namespace UnderAutomation.Staubli.Soap.Data {
 	/// <summary>
 	/// Minimum and maximum range of each robot joint (radians).
 	/// </summary>

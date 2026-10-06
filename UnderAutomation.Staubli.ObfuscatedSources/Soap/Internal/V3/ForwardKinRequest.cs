@@ -3,7 +3,7 @@
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
 
-namespace Soap.Internal.V3 {
+namespace UnderAutomation.Staubli.Soap.Internal.V3 {
 	/// <summary>
 	/// SOAP request to compute forward kinematics for a robot.
 	/// </summary>

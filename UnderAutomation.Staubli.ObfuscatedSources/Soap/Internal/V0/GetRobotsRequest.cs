@@ -3,7 +3,7 @@
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
 
-namespace Soap.Internal.V0 {
+namespace UnderAutomation.Staubli.Soap.Internal.V0 {
 	/// <summary>
 	/// SOAP request to retrieve the list of robots managed by the controller.
 	/// </summary>

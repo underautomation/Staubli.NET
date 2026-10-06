@@ -4,7 +4,7 @@
 
 using System.Runtime.Serialization;
 
-namespace Soap.Errors {
+namespace UnderAutomation.Staubli.Soap.Errors {
 	/// <summary>
 	/// Custom exception class for handling SOAP errors with specific error codes and descriptions.
 	/// </summary>

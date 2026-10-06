@@ -2,9 +2,9 @@
 // This file is an empty shell containing only public C# items.
 // The internal code is hidden; to access it, you need to obtain a Source licence of the library.
 
-using Soap.Data;
+using UnderAutomation.Staubli.Soap.Data;
 
-namespace Soap.Internal.V0 {
+namespace UnderAutomation.Staubli.Soap.Internal.V0 {
 	/// <summary>
 	/// SOAP response containing the list of robots.
 	/// </summary>
