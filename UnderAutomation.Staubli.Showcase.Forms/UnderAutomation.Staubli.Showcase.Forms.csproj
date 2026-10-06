@@ -31,6 +31,9 @@
 	  <Compile Update="Components\ValApplicationsControl.cs">
 	    <SubType>UserControl</SubType>
 	  </Compile>
+	  <Compile Update="Components\FilesControl.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
 	  <Compile Update="Components\CurrentPositionControl.cs">
 	    <SubType>UserControl</SubType>
 	  </Compile>

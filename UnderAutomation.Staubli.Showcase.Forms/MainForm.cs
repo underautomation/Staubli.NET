@@ -29,6 +29,7 @@ public partial class MainForm : Form
         AddNode(new RobotInfoControl(_controller));
         AddNode(new CurrentPositionControl(_controller));
         AddNode(new ValApplicationsControl(_controller));
+        AddNode(new FilesControl(_controller));
         AddNode(new PhysicalIosControl(_controller));
         AddNode(new MotionControl(_controller));
         AddNode(new KinematicsControl(_controller));

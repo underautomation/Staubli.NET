@@ -46,6 +46,9 @@ public class Config
     public string Licensee { get; set; }
     public string Key { get; set; }
 
+    // Last folder opened in the files explorer
+    public string? FilesPath { get; set; }
+
     #endregion
 }
 

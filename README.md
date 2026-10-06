@@ -12,7 +12,8 @@ robot controllers through the **SOAP server** of the controller. Nothing is inst
 No Staubli Robotics Suite, no other Staubli software on the PC.
 
 Use it to read the robots and the controller parameters, read positions, compute the kinematics, move the
-robot, read and write I/O, and manage VAL 3 applications and tasks, from a normal .NET application.
+robot, read and write I/O, manage VAL 3 applications and tasks, and transfer the files of the controller,
+from a normal .NET application.
 
 - Product page: [underautomation.com/staubli](https://underautomation.com/staubli)
 - Documentation: [underautomation.com/staubli/documentation](https://underautomation.com/staubli/documentation)
@@ -31,6 +32,9 @@ robot, read and write I/O, and manage VAL 3 applications and tasks, from a norma
 - **VAL 3 applications:** load a project, list the applications, start and stop an application, stop and
   unload all.
 - **Tasks:** list the tasks with their state, suspend, resume or kill a task.
+- **Files:** list, upload, download, rename and delete the files of the controller, and send a complete
+  VAL 3 application to `/usr/usrapp`. Through the FTP server of a real controller, or in the Controller
+  folder of a cell emulated by Staubli Robotics Suite.
 
 The SOAP server is part of the standard controller software. The user, the password and the port (851 by
 default) are the ones of the controller.
@@ -73,7 +77,7 @@ var controller = new StaubliController();
 var parameters = new ConnectionParameters("192.168.0.254");
 parameters.Soap.User = "default";     // user of the controller
 parameters.Soap.Password = "default";
-parameters.Soap.Port = 851;           // default SOAP port
+parameters.Soap.Port = 0;             // 0 (default): automatic, 851 on a real controller
 
 controller.Connect(parameters);
 
@@ -85,9 +89,14 @@ controller.Disconnect();
 
 `ConnectionParameters.PingBeforeConnect` (true by default) pings the controller before the connection.
 
+To connect to a controller emulated by Staubli Robotics Suite, give the path of its `.controller` file as
+address (for example `C:\...\MyCell\Controller1\Controller1.controller`, or a UNC path when the emulator
+runs on another PC). With the SOAP port 0, the SDK reads the SOAP port of the emulated controller in its
+configuration (`usr\configs\network.cfx`), and uses 851 when it is not found.
+
 ## Features
 
-Everything is reached through `controller.Soap`.
+Everything is reached through `controller.Soap`, except the files: `controller.File`.
 
 ### Controller and robots
 
@@ -138,6 +147,7 @@ var mdesc = new MotionDesc
     RotationVelocity = 100,    // deg/s
     Tool = new Frame(),
     Frame = new Frame(),
+    Frequency = 100,           // interpolation frequency in %, 0 is refused by the controller
 };
 
 controller.Soap.SetPower(true);
@@ -191,6 +201,44 @@ controller.Soap.TaskSuspend(tasks[0].Name, tasks[0].CreatedBy);
 controller.Soap.TaskResume(tasks[0].Name, tasks[0].CreatedBy);
 controller.Soap.TaskKill(tasks[0].Name, tasks[0].CreatedBy);
 ```
+
+### Files
+
+The file client is disabled by default. On a real controller, it uses the FTP server of the controller
+(port 21, user and password of the FTP server). The emulator of Staubli Robotics Suite has no FTP server:
+give the path of the `.controller` file of the emulated controller as address (a UNC path when the emulator
+runs on another PC). The files are read and written in the folder of this file, which has the same tree as
+the FTP server of a real controller. The paths are the same in both cases. The VAL 3 applications are in `/usr/usrapp`, one sub-folder per
+application: `/usr/usrapp/myApp/myApp.pjx` is the project `Disk://myApp/myApp.pjx`.
+
+```csharp
+using UnderAutomation.Staubli;
+using UnderAutomation.Staubli.Files;
+
+var parameters = new ConnectionParameters("192.168.0.254"); // or @"C:\SRS\MyCell\Controller1\Controller1.controller"
+parameters.File.Enable = true;
+parameters.File.User = "default";
+parameters.File.Password = "default";
+
+var controller = new StaubliController();
+controller.Connect(parameters);
+
+foreach (FileItem item in controller.File.GetListing("/usr/usrapp"))
+    Console.WriteLine($"{item.FullName} {item.Type} {item.Size}");
+
+controller.File.UploadFileToController(@"C:\Data\points.dat", "/usr/usrapp/myApp/points.dat");
+byte[] content = controller.File.DownloadBytesFromController("/usr/usrapp/myApp/myApp.pjx");
+
+// Send a complete application: C:\MyApps\myApp is copied to /usr/usrapp/myApp
+controller.Soap.StopAndUnloadAll();
+controller.File.UploadApplicationToController(@"C:\MyApps\myApp");
+controller.Soap.LoadProject("Disk://myApp/myApp.pjx");
+
+controller.Disconnect();
+```
+
+Each method has an asynchronous version (`GetListingAsync`, `UploadApplicationToControllerAsync`...).
+`FileClient` is the same client without `StaubliController`.
 
 ## Shell sources
 
